@@ -1,0 +1,14 @@
+# Required for Python < 3.11 (built-in tomllib available in 3.11+)
+tomli>=1.2.0; python_version<"3.11"
+
+# Optional dependencies for enhanced experience
+rich>=13.0.0  # Progress bars, colored output, tables
+
+# Optional: YAML output format support
+pyyaml>=6.0
+
+# TUI Application
+textual>=0.50.0  # Terminal User Interface framework
+
+# Building executables (development only)
+# pyinstaller>=6.0.0

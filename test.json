@@ -1,0 +1,3333 @@
+{
+  "mods": [
+    {
+      "name": "accelerated-decay-neoforge-21.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "accelerated-decay-neoforge-21.0.0.jar"
+    },
+    {
+      "name": "actuallyadditions",
+      "loader": "unknown",
+      "version": "1.3.19+mc1.21.1",
+      "filename": "actuallyadditions-1.3.19+mc1.21.1.jar"
+    },
+    {
+      "name": "assets/quarryplus/models/item/plainpipe.json",
+      "loader": "unknown",
+      "version": "21.1.135",
+      "filename": "AdditionalEnchantedMiner-1.21.1-neoforge-21.1.135.jar"
+    },
+    {
+      "name": "additional_lights-neoforge-1.21-2.1.10",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "additional_lights-neoforge-1.21-2.1.10.jar"
+    },
+    {
+      "name": "AdvancedAE-1.4.5-1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "AdvancedAE-1.4.5-1.21.1.jar"
+    },
+    {
+      "name": "advancedperipherals",
+      "loader": "unknown",
+      "version": "0.7.56b",
+      "filename": "AdvancedPeripherals-1.21.1-0.7.56b.jar"
+    },
+    {
+      "name": "ae2ct-1.21.1-1.1.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ae2ct-1.21.1-1.1.0.jar"
+    },
+    {
+      "name": "ae2importexportcard-1.21-1.4.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ae2importexportcard-1.21-1.4.0.jar"
+    },
+    {
+      "name": "ae2jeiintegration-1.2.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ae2jeiintegration-1.2.0.jar"
+    },
+    {
+      "name": "AE2NetworkAnalyzer-1.21-2.1.3-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "AE2NetworkAnalyzer-1.21-2.1.3-neoforge.jar"
+    },
+    {
+      "name": "ae2wtlib-19.2.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ae2wtlib-19.2.6.jar"
+    },
+    {
+      "name": "aeinfinitybooster-neoforge-1.21.1-1.0.0.52",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "aeinfinitybooster-neoforge-1.21.1-1.0.0.52.jar"
+    },
+    {
+      "name": "aether-1.21.1-1.5.9-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "aether-1.21.1-1.5.9-neoforge.jar"
+    },
+    {
+      "name": "AI-Improvements",
+      "loader": "unknown",
+      "version": "0.5.3",
+      "filename": "AI-Improvements-1.21-0.5.3.jar"
+    },
+    {
+      "name": "akashictome",
+      "loader": "unknown",
+      "version": "1.8-29",
+      "filename": "AkashicTome-1.8-29.jar"
+    },
+    {
+      "name": "allthearcanistgear-1.21.1-21.3.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "allthearcanistgear-1.21.1-21.3.2.jar"
+    },
+    {
+      "name": "allthecompressed-1.21.1-4.3.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "allthecompressed-1.21.1-4.3.0.jar"
+    },
+    {
+      "name": "All The Leaks",
+      "loader": "unknown",
+      "version": "1.0.1+1.21.1-neoforge",
+      "filename": "alltheleaks-1.0.1+1.21.1-neoforge.jar"
+    },
+    {
+      "name": "AllTheModium",
+      "loader": "unknown",
+      "version": "2.9.3_mc_1.21.1",
+      "filename": "allthemodium-2.9.3_mc_1.21.1.jar"
+    },
+    {
+      "name": "alltheores-3.1.7_neoforge_1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "alltheores-3.1.7_neoforge_1.21.1.jar"
+    },
+    {
+      "name": "AllTheTweaks",
+      "loader": "unknown",
+      "version": "2.6.8",
+      "filename": "allthetweaks-1.21.1-2.6.8.jar"
+    },
+    {
+      "name": "All the Wizard Gear",
+      "loader": "unknown",
+      "version": "1.21.1-1.1.11",
+      "filename": "allthewizardgear-1.21.1-1.1.11.jar"
+    },
+    {
+      "name": "almostunified-neoforge-1.21.1-1.3.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "almostunified-neoforge-1.21.1-1.3.0.jar"
+    },
+    {
+      "name": "amendments-1.21-2.0.5-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "amendments-1.21-2.0.5-neoforge.jar"
+    },
+    {
+      "name": "Apotheosis",
+      "loader": "unknown",
+      "version": "8.4.0",
+      "filename": "Apotheosis-1.21.1-8.4.0.jar"
+    },
+    {
+      "name": "ApothicAttributes",
+      "loader": "unknown",
+      "version": "2.9.0",
+      "filename": "ApothicAttributes-1.21.1-2.9.0.jar"
+    },
+    {
+      "name": "ApothicEnchanting",
+      "loader": "unknown",
+      "version": "1.5.0",
+      "filename": "ApothicEnchanting-1.21.1-1.5.0.jar"
+    },
+    {
+      "name": "ApothicSpawners",
+      "loader": "unknown",
+      "version": "1.3.2",
+      "filename": "ApothicSpawners-1.21.1-1.3.2.jar"
+    },
+    {
+      "name": "AppleSkin",
+      "loader": "unknown",
+      "version": "3.0.7+mc1.21",
+      "filename": "appleskin-neoforge-mc1.21-3.0.7.jar"
+    },
+    {
+      "name": "Applied-Mekanistics-1.6.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Applied-Mekanistics-1.6.2.jar"
+    },
+    {
+      "name": "appliedenergistics2-19.2.16",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "appliedenergistics2-19.2.16.jar"
+    },
+    {
+      "name": "AppliedFlux-1.21-2.1.3-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "AppliedFlux-1.21-2.1.3-neoforge.jar"
+    },
+    {
+      "name": "Aquaculture-1.21.1-2.7.14",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Aquaculture-1.21.1-2.7.14.jar"
+    },
+    {
+      "name": "architectury-13.0.8-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "architectury-13.0.8-neoforge.jar"
+    },
+    {
+      "name": "arseng-2.1.1-beta",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "arseng-2.1.1-beta.jar"
+    },
+    {
+      "name": "ars_additions-1.21.1-21.2.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ars_additions-1.21.1-21.2.3.jar"
+    },
+    {
+      "name": "ars_controle-1.21.1-1.6.10",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ars_controle-1.21.1-1.6.10.jar"
+    },
+    {
+      "name": "ars-contraption",
+      "loader": "unknown",
+      "version": "5.1.0",
+      "filename": "ars_creo-1.21.1-5.1.0.jar"
+    },
+    {
+      "name": "Ars-Elemancy",
+      "loader": "unknown",
+      "version": "1.11",
+      "filename": "ars_elemancy-1.21.1-1.11.jar"
+    },
+    {
+      "name": "Ars-Elemental",
+      "loader": "unknown",
+      "version": "0.7.6.0-pre2",
+      "filename": "ars_elemental-1.21.1-0.7.6.0-pre2.jar"
+    },
+    {
+      "name": "Ars-Nouveau",
+      "loader": "unknown",
+      "version": "5.10.4",
+      "filename": "ars_nouveau-1.21.1-5.10.4.jar"
+    },
+    {
+      "name": "ars_ocultas-1.21.1-2.2.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ars_ocultas-1.21.1-2.2.0.jar"
+    },
+    {
+      "name": "ars_polymorphia-1.0.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ars_polymorphia-1.0.3.jar"
+    },
+    {
+      "name": "Ars-Technica",
+      "loader": "unknown",
+      "version": "1.21.1-2.3.0",
+      "filename": "ars_technica-1.21.1-2.3.0.jar"
+    },
+    {
+      "name": "ars_unification-1.2.16",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ars_unification-1.2.16.jar"
+    },
+    {
+      "name": "artifacts-neoforge-13.0.7",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "artifacts-neoforge-13.0.7.jar"
+    },
+    {
+      "name": "athena-neoforge-1.21-4.0.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "athena-neoforge-1.21-4.0.2.jar"
+    },
+    {
+      "name": "atlas_api-1.21.1-1.2.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "atlas_api-1.21.1-1.2.0.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.2",
+      "filename": "attributefix-neoforge-1.21.1-21.1.2.jar"
+    },
+    {
+      "name": "Auroras-1.21-1.6.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Auroras-1.21-1.6.2.jar"
+    },
+    {
+      "name": "badgebox-neoforge-1.3.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "badgebox-neoforge-1.3.0.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.0.51",
+      "filename": "balm-neoforge-1.21.1-21.0.51.jar"
+    },
+    {
+      "name": "baubley-heart-canisters-1.21.1-1.2.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "baubley-heart-canisters-1.21.1-1.2.3.jar"
+    },
+    {
+      "name": "bcc-21.1.3+mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "bcc-21.1.3+mc1.21.1.jar"
+    },
+    {
+      "name": "BellsAndWhistlesMod",
+      "loader": "unknown",
+      "version": "0.4.7-1.21.1",
+      "filename": "bellsandwhistles-0.4.7-1.21.1.jar"
+    },
+    {
+      "name": "BetterAdvancements-NeoForge-1.21.1-0.4.3.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "BetterAdvancements-NeoForge-1.21.1-0.4.3.21.jar"
+    },
+    {
+      "name": "bibliobiomes-1.21.1-1.6.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "bibliobiomes-1.21.1-1.6.0.jar"
+    },
+    {
+      "name": "bibliocraft",
+      "loader": "unknown",
+      "version": "1.6.1",
+      "filename": "bibliocraft-1.21.1-1.6.1.jar"
+    },
+    {
+      "name": "bibliowoods-1.21.1-1.6.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "bibliowoods-1.21.1-1.6.0.jar"
+    },
+    {
+      "name": "blockui",
+      "loader": "unknown",
+      "version": "1.0.204-1.21.1-snapshot",
+      "filename": "blockui-1.0.204-1.21.1-snapshot.jar"
+    },
+    {
+      "name": "blueflame-1.21.1-1.1.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "blueflame-1.21.1-1.1.1.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.69",
+      "filename": "bookshelf-neoforge-1.21.1-21.1.69.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.40",
+      "filename": "botanypots-neoforge-1.21.1-21.1.40.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.9",
+      "filename": "botanypotsmystical-neoforge-1.21.1-21.1.9.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.1",
+      "filename": "botanytrees-neoforge-1.21.1-21.1.1.jar"
+    },
+    {
+      "name": "Brandon's Core",
+      "loader": "forge",
+      "version": "${version}",
+      "filename": "BrandonsCore-1.21.1-3.2.1.307.jar"
+    },
+    {
+      "name": "BridgingMod-2.6.2+1.21.1.neoforge-release",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "BridgingMod-2.6.2+1.21.1.neoforge-release.jar"
+    },
+    {
+      "name": "buildinggadgets2-1.3.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "buildinggadgets2-1.3.9.jar"
+    },
+    {
+      "name": "forge",
+      "loader": "unknown",
+      "version": "3.20.3",
+      "filename": "bwncr-neoforge-1.21.1-3.20.3.jar"
+    },
+    {
+      "name": "Byzantine",
+      "loader": "forge",
+      "version": "37",
+      "filename": "Byzantine-1.21.1-37.jar"
+    },
+    {
+      "name": "cabletiers-neoforge-1.21.1-0.3.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cabletiers-neoforge-1.21.1-0.3.1.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "7.0.1+1.21.1",
+      "filename": "caelus-neoforge-7.0.1+1.21.1.jar"
+    },
+    {
+      "name": "camol-1.21.1-0.3.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "camol-1.21.1-0.3.0.jar"
+    },
+    {
+      "name": "capturexp-neoforge-1.6.1-1.2.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "capturexp-neoforge-1.6.1-1.2.1.jar"
+    },
+    {
+      "name": "CatJammies",
+      "loader": "unknown",
+      "version": "1.21-1.7.1",
+      "filename": "catjammies-1.21-1.7.1.jar"
+    },
+    {
+      "name": "cctweaked-forge",
+      "loader": "unknown",
+      "version": "1.113.1",
+      "filename": "cc-tweaked-1.21.1-forge-1.113.1.jar"
+    },
+    {
+      "name": "cctweaked-forge",
+      "loader": "unknown",
+      "version": "1.116.1",
+      "filename": "cc-tweaked-1.21.1-forge-1.116.1.jar"
+    },
+    {
+      "name": "charginggadgets-1.14.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "charginggadgets-1.14.1.jar"
+    },
+    {
+      "name": "chipped-neoforge-1.21.1-4.0.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "chipped-neoforge-1.21.1-4.0.2.jar"
+    },
+    {
+      "name": "chisel-neoforge-2.0.0+mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "chisel-neoforge-2.0.0+mc1.21.1.jar"
+    },
+    {
+      "name": "chromacarvings-1.21.1-0.2.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "chromacarvings-1.21.1-0.2.0.jar"
+    },
+    {
+      "name": "cleanswing-1.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cleanswing-1.9.jar"
+    },
+    {
+      "name": "cloth-config-15.0.140-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cloth-config-15.0.140-neoforge.jar"
+    },
+    {
+      "name": "CloudGlass",
+      "loader": "unknown",
+      "version": "1.0.1",
+      "filename": "CloudGlass-1.21.1-1.0.1.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "19.0.0.1",
+      "filename": "Clumps-neoforge-1.21.1-19.0.0.1.jar"
+    },
+    {
+      "name": "CobbleDollars-neoforge-2.0.0+Beta-5.1+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "CobbleDollars-neoforge-2.0.0+Beta-5.1+1.21.1.jar"
+    },
+    {
+      "name": "cobblegengalore-1.21.1-0.2.7",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobblegengalore-1.21.1-0.2.7.jar"
+    },
+    {
+      "name": "cobblemon-counter-1.6-neoforge-1.5.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobblemon-counter-1.6-neoforge-1.5.1.jar"
+    },
+    {
+      "name": "Cobblemon-neoforge-1.6.1+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Cobblemon-neoforge-1.6.1+1.21.1.jar"
+    },
+    {
+      "name": "cobblemon-spawn-notification-1.6-neoforge-1.3.8",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobblemon-spawn-notification-1.6-neoforge-1.3.8.jar"
+    },
+    {
+      "name": "Cobblemon-Utility+-neoforge-1.6.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Cobblemon-Utility+-neoforge-1.6.2.jar"
+    },
+    {
+      "name": "CobblemonAlphasNeoforge-1.1+1.6.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "CobblemonAlphasNeoforge-1.1+1.6.1.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.0.4",
+      "filename": "cobblemonboxlink-neoforge-1.21.1-1.0.4.jar"
+    },
+    {
+      "name": "cobblemonextrastructures-1.21.1-1.2.0-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobblemonextrastructures-1.21.1-1.2.0-neoforge.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.1.3",
+      "filename": "cobblemonintegrations-neoforge-1.21.1-1.1.3.jar"
+    },
+    {
+      "name": "CobblemonSizeVariationNeoforge-1.2.0+1.6.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "CobblemonSizeVariationNeoforge-1.2.0+1.6.1.jar"
+    },
+    {
+      "name": "Cobblemon_MegaShowdown-10.0.8-release-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Cobblemon_MegaShowdown-10.0.8-release-neoforge.jar"
+    },
+    {
+      "name": "cobblemon_quests-[1.21.1]-neoforge-1.1.14",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobblemon_quests-[1.21.1]-neoforge-1.1.14.jar"
+    },
+    {
+      "name": "cobblenav-neoforge-2.2.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobblenav-neoforge-2.2.3.jar"
+    },
+    {
+      "name": "Cobblepedia-NeoForge-0.7.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Cobblepedia-NeoForge-0.7.0.jar"
+    },
+    {
+      "name": "cobbleride-neoforge-0.3.3+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobbleride-neoforge-0.3.3+1.21.1.jar"
+    },
+    {
+      "name": "cobgyms-neoforge-3.0.1+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cobgyms-neoforge-3.0.1+1.21.1.jar"
+    },
+    {
+      "name": "Cobweb",
+      "loader": "unknown",
+      "version": "1.21-1.3.3",
+      "filename": "cobweb-neoforge-1.21-1.3.3.jar"
+    },
+    {
+      "name": "codechicken/lib/data/MCDataInputStream.class",
+      "loader": "unknown",
+      "version": "4.6.1.524",
+      "filename": "CodeChickenLib-1.21.1-4.6.1.524.jar"
+    },
+    {
+      "name": "colorfulhearts-neoforge-1.21.1-10.5.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "colorfulhearts-neoforge-1.21.1-10.5.9.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "9.0.4+1.21.1",
+      "filename": "comforts-neoforge-9.0.4+1.21.1.jar"
+    },
+    {
+      "name": "CommonCapabilities",
+      "loader": "unknown",
+      "version": "2.9.12",
+      "filename": "commoncapabilities-1.21.1-neoforge-2.9.12.jar"
+    },
+    {
+      "name": "Compact Machines",
+      "loader": "unknown",
+      "version": "7.0.36",
+      "filename": "compactmachines-neoforge-7.0.36.jar"
+    },
+    {
+      "name": "connectedglass-1.1.14-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "connectedglass-1.1.14-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "connectivity-1.21.1-7.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "connectivity-1.21.1-7.1.jar"
+    },
+    {
+      "name": "ConstructionSticks",
+      "loader": "unknown",
+      "version": "1.2.3",
+      "filename": "ConstructionSticks-1.21.1-1.2.3.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "19.0.5",
+      "filename": "Controlling-neoforge-1.21.1-19.0.5.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.17",
+      "filename": "cookingforblockheads-neoforge-1.21.1-21.1.17.jar"
+    },
+    {
+      "name": "Corgilib-NeoForge-1.21.1-5.0.0.7",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Corgilib-NeoForge-1.21.1-5.0.0.7.jar"
+    },
+    {
+      "name": "cosmeticarmorreworked-1.21.1-v1-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cosmeticarmorreworked-1.21.1-v1-neoforge.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.6",
+      "filename": "craftingtweaks-neoforge-1.21.1-21.1.6.jar"
+    },
+    {
+      "name": "crafting_on_a_stick-1.21.0.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "crafting_on_a_stick-1.21.0.2.jar"
+    },
+    {
+      "name": "neoforge_coremod",
+      "loader": "unknown",
+      "version": "1.9.15",
+      "filename": "CrashAssistant-neoforge-1.20.6-1.21.4-1.9.15.jar"
+    },
+    {
+      "name": "crashutilities-9.0.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "crashutilities-9.0.4.jar"
+    },
+    {
+      "name": "Create",
+      "loader": "unknown",
+      "version": "6.0.6",
+      "filename": "create-1.21.1-6.0.6.jar"
+    },
+    {
+      "name": "create-dragons-plus-1.8.0b",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "create-dragons-plus-1.8.0b.jar"
+    },
+    {
+      "name": "create-enchantment-industry-2.2.2b",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "create-enchantment-industry-2.2.2b.jar"
+    },
+    {
+      "name": "createaddition-1.5.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "createaddition-1.5.3.jar"
+    },
+    {
+      "name": "createcobblemonballsoverhaul-0.0.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "createcobblemonballsoverhaul-0.0.3.jar"
+    },
+    {
+      "name": "create_aquatic_ambitions-1.21.1-2.0.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "create_aquatic_ambitions-1.21.1-2.0.1.jar"
+    },
+    {
+      "name": "create_hypertube-0.2.5-NEOFORGE",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "create_hypertube-0.2.5-NEOFORGE.jar"
+    },
+    {
+      "name": "CreeperOverhaul-neoforge-1.21.1-4.0.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "CreeperOverhaul-neoforge-1.21.1-4.0.6.jar"
+    },
+    {
+      "name": "cristellib-neoforge-1.2.8",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cristellib-neoforge-1.2.8.jar"
+    },
+    {
+      "name": "cryonicconfig-neoforge-1.0.0+mc1.21.8",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cryonicconfig-neoforge-1.0.0+mc1.21.8.jar"
+    },
+    {
+      "name": "crystalix-1.6.0_neoforge_1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "crystalix-1.6.0_neoforge_1.21.1.jar"
+    },
+    {
+      "name": "ConnectedTexturesMod",
+      "loader": "unknown",
+      "version": "1.21-1.2.1+3",
+      "filename": "CTM-1.21-1.2.1+3.jar"
+    },
+    {
+      "name": "Cucumber-1.21.1-8.0.14",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Cucumber-1.21.1-8.0.14.jar"
+    },
+    {
+      "name": "cupboard-1.21-2.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "cupboard-1.21-2.9.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "9.5.1+1.21.1",
+      "filename": "curios-neoforge-9.5.1+1.21.1.jar"
+    },
+    {
+      "name": "loader-neoforge",
+      "loader": "unknown",
+      "version": "1.26.2-808",
+      "filename": "cyclopscore-1.21.1-neoforge-1.26.2-808.jar"
+    },
+    {
+      "name": "darkmodeeverywhere-1.21-1.3.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "darkmodeeverywhere-1.21-1.3.5.jar"
+    },
+    {
+      "name": "deeperdarker-neoforge-1.21.1-1.3.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "deeperdarker-neoforge-1.21.1-1.3.5.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2.4",
+      "filename": "deimos-1.21.1-neoforge-2.4.jar"
+    },
+    {
+      "name": "dimstorage",
+      "loader": "unknown",
+      "version": "1.21.1-9.1.0",
+      "filename": "DimStorage-1.21.1-9.1.0.jar"
+    },
+    {
+      "name": "Dis-Enchanting Table",
+      "loader": "fabric",
+      "version": "5.0.2",
+      "filename": "disenchanting_table-merged-1.21.1-5.0.2.jar"
+    },
+    {
+      "name": "domum-ornamentum",
+      "loader": "unknown",
+      "version": "1.0.221-snapshot",
+      "filename": "domum-ornamentum-1.0.221-snapshot-main.jar"
+    },
+    {
+      "name": "Draconic Evolution",
+      "loader": "forge",
+      "version": "${version}",
+      "filename": "Draconic-Evolution-1.21.1-3.1.3.627.jar"
+    },
+    {
+      "name": "Drippy Loading Screen",
+      "loader": "unknown",
+      "version": "3.0.12",
+      "filename": "drippyloadingscreen_neoforge_3.0.12_MC_1.21.1.jar"
+    },
+    {
+      "name": "dummmmmmy-1.21-2.0.9-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "dummmmmmy-1.21-2.0.9-neoforge.jar"
+    },
+    {
+      "name": "DungeonCrawl-NeoForge-1.21-2.3.15",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "DungeonCrawl-NeoForge-1.21-2.3.15.jar"
+    },
+    {
+      "name": "DungeonsArise-1.21.x-2.1.64-release",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "DungeonsArise-1.21.x-2.1.64-release.jar"
+    },
+    {
+      "name": "dyenamics-1.21.1-3.4.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "dyenamics-1.21.1-3.4.1.jar"
+    },
+    {
+      "name": "dyenamicsandfriends-1.21.1-2.2.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "dyenamicsandfriends-1.21.1-2.2.0.jar"
+    },
+    {
+      "name": "Easy Villagers",
+      "loader": "unknown",
+      "version": "1.21.1-1.1.35",
+      "filename": "easy-villagers-neoforge-1.21.1-1.1.35.jar"
+    },
+    {
+      "name": "edivadlib",
+      "loader": "unknown",
+      "version": "1.21-3.0.0",
+      "filename": "EdivadLib-1.21-3.0.0.jar"
+    },
+    {
+      "name": "Eggs - Cobblemon Addon",
+      "loader": "fabric",
+      "version": "0.7",
+      "filename": "eggs-cobblemon-addon-0.7.jar"
+    },
+    {
+      "name": "elevatorid-neoforge-1.21.1-1.11.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "elevatorid-neoforge-1.21.1-1.11.4.jar"
+    },
+    {
+      "name": "embeddium-1.0.15+mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "embeddium-1.0.15+mc1.21.1.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.8",
+      "filename": "enchdesc-neoforge-1.21.1-21.1.8.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.4.3",
+      "filename": "enderdrives-neoforge-1.21.1-1.4.3.jar"
+    },
+    {
+      "name": "enderio-7.1.8-alpha",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "enderio-7.1.8-alpha.jar"
+    },
+    {
+      "name": "endermanoverhaul-neoforge-1.21.1-2.0.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "endermanoverhaul-neoforge-1.21.1-2.0.2.jar"
+    },
+    {
+      "name": "codechicken/enderstorage/item/ItemEnderStorage.class",
+      "loader": "unknown",
+      "version": "1.21.1-2.13.0.191",
+      "filename": "EnderStorage-1.21.1-2.13.0.191.jar"
+    },
+    {
+      "name": "entangled-1.3.20a-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "entangled-1.3.20a-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "Essential_1-3-9-1_neoforge_1-21-1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Essential_1-3-9-1_neoforge_1-21-1.jar"
+    },
+    {
+      "name": "eternalstarlight-0.5.1+1.21.1+neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "eternalstarlight-0.5.1+1.21.1+neoforge.jar"
+    },
+    {
+      "name": "Euphoria Patcher",
+      "loader": "unknown",
+      "version": "1.6.8-r5.5.1-neoforge",
+      "filename": "EuphoriaPatcher-1.6.8-r5.5.1-neoforge.jar"
+    },
+    {
+      "name": "everythingcopper-1.21.1-2.4.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "everythingcopper-1.21.1-2.4.5.jar"
+    },
+    {
+      "name": "EvilCraft",
+      "loader": "unknown",
+      "version": "1.2.78",
+      "filename": "evilcraft-1.21.1-neoforge-1.2.78.jar"
+    },
+    {
+      "name": "expandedae-2.1.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "expandedae-2.1.1.jar"
+    },
+    {
+      "name": "experiencelib-1.21.1-1.1.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "experiencelib-1.21.1-1.1.1.jar"
+    },
+    {
+      "name": "ExplorersCompass-1.21.1-3.0.3-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ExplorersCompass-1.21.1-3.0.3-neoforge.jar"
+    },
+    {
+      "name": "Explorify",
+      "loader": "fabric",
+      "version": "1.6.2",
+      "filename": "Explorify v1.6.2 f10-48.jar"
+    },
+    {
+      "name": "extended-industrialization-1.15.8-1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "extended-industrialization-1.15.8-1.21.1.jar"
+    },
+    {
+      "name": "ExtendedAE-1.21-2.2.22-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ExtendedAE-1.21-2.2.22-neoforge.jar"
+    },
+    {
+      "name": "ExtraDisks",
+      "loader": "unknown",
+      "version": "1.21.1-4.0.13",
+      "filename": "ExtraDisks-1.21.1-4.0.13.jar"
+    },
+    {
+      "name": "extrastorage",
+      "loader": "unknown",
+      "version": "1.21.1-5.0.7",
+      "filename": "ExtraStorage-1.21.1-5.0.7.jar"
+    },
+    {
+      "name": "Extreme Reactors",
+      "loader": "unknown",
+      "version": "1.21.1-2.4.24",
+      "filename": "ExtremeReactors2-1.21.1-2.4.24.jar"
+    },
+    {
+      "name": "ExtremeSoundMuffler-3.51_NeoForge-1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ExtremeSoundMuffler-3.51_NeoForge-1.21.jar"
+    },
+    {
+      "name": "factory_blocks-neoforge-1.4.0+mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "factory_blocks-neoforge-1.4.0+mc1.21.1.jar"
+    },
+    {
+      "name": "FancyMenu",
+      "loader": "unknown",
+      "version": "3.7.0",
+      "filename": "fancymenu_neoforge_3.7.0_MC_1.21.1.jar"
+    },
+    {
+      "name": "FarmersDelight-1.21.1-1.2.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "FarmersDelight-1.21.1-1.2.9.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.8",
+      "filename": "farmingforblockheads-neoforge-1.21.1-21.1.8.jar"
+    },
+    {
+      "name": "FastFurnace",
+      "loader": "unknown",
+      "version": "9.0.1",
+      "filename": "FastFurnace-1.21.1-9.0.1.jar"
+    },
+    {
+      "name": "FastSuite",
+      "loader": "unknown",
+      "version": "6.0.5",
+      "filename": "FastSuite-1.21.1-6.0.5.jar"
+    },
+    {
+      "name": "FastWorkbench",
+      "loader": "unknown",
+      "version": "9.1.3",
+      "filename": "FastWorkbench-1.21.1-9.1.3.jar"
+    },
+    {
+      "name": "ferritecore-7.0.2-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ferritecore-7.0.2-neoforge.jar"
+    },
+    {
+      "name": "fightorflight-neoforge-0.8.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "fightorflight-neoforge-0.8.3.jar"
+    },
+    {
+      "name": "fireproofboats-1.21.1-1.0.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "fireproofboats-1.21.1-1.0.4.jar"
+    },
+    {
+      "name": "flickerfix-1.21.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "flickerfix-1.21.0.jar"
+    },
+    {
+      "name": "FluxNetworks-1.21.1-8.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "FluxNetworks-1.21.1-8.0.0.jar"
+    },
+    {
+      "name": "forbidden_arcanus-2.6.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "forbidden_arcanus-2.6.1.jar"
+    },
+    {
+      "name": "formations-1.0.4-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "formations-1.0.4-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "Formations Nether",
+      "loader": "fabric",
+      "version": "1.0.5",
+      "filename": "formationsnether-1.0.5-mc1.21+.jar"
+    },
+    {
+      "name": "Formations Overworld",
+      "loader": "fabric",
+      "version": "1.0.5",
+      "filename": "formationsoverworld-1.0.5-mc1.21+.jar"
+    },
+    {
+      "name": "FramedBlocks-10.4.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "FramedBlocks-10.4.0.jar"
+    },
+    {
+      "name": "com/mrcrayfish/framework/event/IScreenEvent$Init.class",
+      "loader": "unknown",
+      "version": "1.21.1-0.9.6",
+      "filename": "framework-neoforge-1.21.1-0.9.6.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2101.1.10",
+      "filename": "ftb-chunks-neoforge-2101.1.10.jar"
+    },
+    {
+      "name": "ftb-essentials-neoforge-2101.1.7",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ftb-essentials-neoforge-2101.1.7.jar"
+    },
+    {
+      "name": "ftb-filter-system-neoforge-21.1.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ftb-filter-system-neoforge-21.1.3.jar"
+    },
+    {
+      "name": "ftb-jei-extras-21.1.7",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ftb-jei-extras-21.1.7.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2101.1.20",
+      "filename": "ftb-library-neoforge-2101.1.20.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2101.1.15",
+      "filename": "ftb-quests-neoforge-2101.1.15.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2101.1.3",
+      "filename": "ftb-ranks-neoforge-2101.1.3.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2101.1.4",
+      "filename": "ftb-teams-neoforge-2101.1.4.jar"
+    },
+    {
+      "name": "ftb-ultimine-neoforge-2101.1.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ftb-ultimine-neoforge-2101.1.9.jar"
+    },
+    {
+      "name": "ftb-xmod-compat-neoforge-21.1.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ftb-xmod-compat-neoforge-21.1.6.jar"
+    },
+    {
+      "name": "FTB Quests Lang Splitter",
+      "loader": "unknown",
+      "version": "1.0.5",
+      "filename": "ftbquestslangsplitter-1.0.5.jar"
+    },
+    {
+      "name": "fuelgoeshere-1.21.1-1.2.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "fuelgoeshere-1.21.1-1.2.0.jar"
+    },
+    {
+      "name": "FunctionalStorage",
+      "loader": "unknown",
+      "version": "1.21.1-1.5.4",
+      "filename": "functionalstorage-1.21.1-1.5.4.jar"
+    },
+    {
+      "name": "fusion-1.2.11a-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "fusion-1.2.11a-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "fzzy_config-0.7.2+1.21+neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "fzzy_config-0.7.2+1.21+neoforge.jar"
+    },
+    {
+      "name": "GatewaysToEternity",
+      "loader": "unknown",
+      "version": "5.1.0",
+      "filename": "GatewaysToEternity-1.21.1-5.1.0.jar"
+    },
+    {
+      "name": "GeckoLib 4",
+      "loader": "unknown",
+      "version": "4.8.1",
+      "filename": "geckolib-neoforge-1.21.1-4.8.1.jar"
+    },
+    {
+      "name": "generatorgalore-1.21.1-1.6.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "generatorgalore-1.21.1-1.6.3.jar"
+    },
+    {
+      "name": "Get It Together, Drops!",
+      "loader": "unknown",
+      "version": "1.4",
+      "filename": "getittogetherdrops-neoforge-1.21.5-1.4.jar"
+    },
+    {
+      "name": "Glassential-renewed-1.21.1-3.3.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Glassential-renewed-1.21.1-3.3.2.jar"
+    },
+    {
+      "name": "Glodium-1.21-2.2-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Glodium-1.21-2.2-neoforge.jar"
+    },
+    {
+      "name": "GravitationalModulatingAdditionalUnit-1.21.1-6.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "GravitationalModulatingAdditionalUnit-1.21.1-6.4.jar"
+    },
+    {
+      "name": "guideme-21.1.14",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "guideme-21.1.14.jar"
+    },
+    {
+      "name": "handcrafted-neoforge-1.21.1-4.0.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "handcrafted-neoforge-1.21.1-4.0.3.jar"
+    },
+    {
+      "name": "hardenedarmadillos-1.21.1-0.2.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "hardenedarmadillos-1.21.1-0.2.0.jar"
+    },
+    {
+      "name": "herbsandharvest-1.21.1-2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "herbsandharvest-1.21.1-2.jar"
+    },
+    {
+      "name": "heyberryshutup-1.21.0-2.0.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "heyberryshutup-1.21.0-2.0.4.jar"
+    },
+    {
+      "name": "HostileNeuralNetworks",
+      "loader": "unknown",
+      "version": "6.3.0",
+      "filename": "HostileNeuralNetworks-1.21.1-6.3.0.jar"
+    },
+    {
+      "name": "hyperbox",
+      "loader": "unknown",
+      "version": "6.0.0.1",
+      "filename": "hyperbox-1.21-6.0.0.1.jar"
+    },
+    {
+      "name": "IceAndFireCE-1.1-1.21.1-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "IceAndFireCE-1.1-1.21.1-neoforge.jar"
+    },
+    {
+      "name": "Iceberg-1.21.1-neoforge-1.3.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Iceberg-1.21.1-neoforge-1.3.2.jar"
+    },
+    {
+      "name": "Illager-Warship",
+      "loader": "fabric",
+      "version": "1.0.0",
+      "filename": "illagerwarship-1.0.1-neoforge-1.21.1.jar"
+    },
+    {
+      "name": "imfast-NEOFORGE-1.0.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "imfast-NEOFORGE-1.0.2.jar"
+    },
+    {
+      "name": "ImmediatelyFast-NeoForge-1.6.6+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ImmediatelyFast-NeoForge-1.6.6+1.21.1.jar"
+    },
+    {
+      "name": "Immersive-Energistics-1.1.0-beta",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Immersive-Energistics-1.1.0-beta.jar"
+    },
+    {
+      "name": "ImmersiveEngineering-1.21.1-12.4.2-194",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ImmersiveEngineering-1.21.1-12.4.2-194.jar"
+    },
+    {
+      "name": "InControl",
+      "loader": "unknown",
+      "version": "1.21-10.1.3",
+      "filename": "incontrol-1.21-10.1.3.jar"
+    },
+    {
+      "name": "industrial-foregoing-souls-1.21.1-1.10.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "industrial-foregoing-souls-1.21.1-1.10.4.jar"
+    },
+    {
+      "name": "industrialforegoing-1.21-3.6.34",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "industrialforegoing-1.21-3.6.34.jar"
+    },
+    {
+      "name": "industrialization_overdrive-1.10.2+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "industrialization_overdrive-1.10.2+1.21.1.jar"
+    },
+    {
+      "name": "IntegratedCrafting",
+      "loader": "unknown",
+      "version": "1.2.3",
+      "filename": "integratedcrafting-1.21.1-neoforge-1.2.3-349.jar"
+    },
+    {
+      "name": "IntegratedDynamics",
+      "loader": "unknown",
+      "version": "1.27.9",
+      "filename": "integrateddynamics-1.21.1-neoforge-1.27.9-1308.jar"
+    },
+    {
+      "name": "IntegratedScripting",
+      "loader": "unknown",
+      "version": "1.0.18",
+      "filename": "integratedscripting-1.21.1-neoforge-1.0.18-283.jar"
+    },
+    {
+      "name": "IntegratedTerminals",
+      "loader": "unknown",
+      "version": "1.6.16",
+      "filename": "integratedterminals-1.21.1-neoforge-1.6.16.jar"
+    },
+    {
+      "name": "null",
+      "loader": "unknown",
+      "version": "1.8.44",
+      "filename": "integratedtunnels-1.21.1-neoforge-1.8.44-481.jar"
+    },
+    {
+      "name": "interdimensionalwirelesstransmitter-neoforge-1.21.1-0.1.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "interdimensionalwirelesstransmitter-neoforge-1.21.1-0.1.5.jar"
+    },
+    {
+      "name": "invtweaks-1.21.1-1.3.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "invtweaks-1.21.1-1.3.2.jar"
+    },
+    {
+      "name": "iris-neoforge-1.8.12+mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "iris-neoforge-1.8.12+mc1.21.1.jar"
+    },
+    {
+      "name": "ironfurnaces-neoforge-1.21.1-4.3.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ironfurnaces-neoforge-1.21.1-4.3.1.jar"
+    },
+    {
+      "name": "IronJetpacks-1.21.1-8.0.10",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "IronJetpacks-1.21.1-8.0.10.jar"
+    },
+    {
+      "name": "irons_jewelry-1.21.1-1.5.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "irons_jewelry-1.21.1-1.5.2.jar"
+    },
+    {
+      "name": "Iron's Spells 'n Spellbooks",
+      "loader": "unknown",
+      "version": "1.21.1-3.14.3",
+      "filename": "irons_spellbooks-1.21.1-3.14.3.jar"
+    },
+    {
+      "name": "itemcollectors-1.1.10-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "itemcollectors-1.1.10-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "Jade",
+      "loader": "unknown",
+      "version": "15.10.3+neoforge",
+      "filename": "Jade-1.21.1-NeoForge-15.10.3.jar"
+    },
+    {
+      "name": "jearchaeology-1.21.1-1.1.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "jearchaeology-1.21.1-1.1.6.jar"
+    },
+    {
+      "name": "jar",
+      "loader": "unknown",
+      "version": "19.22.0.315",
+      "filename": "jei-1.21.1-neoforge-19.22.0.315.jar"
+    },
+    {
+      "name": "Journeymap-NeoForge",
+      "loader": "fabric",
+      "version": "not a fabric mod",
+      "filename": "journeymap-neoforge-1.21.1-6.0.0-beta.52.jar"
+    },
+    {
+      "name": "jumpboat-1.21.0-1.0.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "jumpboat-1.21.0-1.0.5.jar"
+    },
+    {
+      "name": "Jupiter-2.2.2-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Jupiter-2.2.2-neoforge.jar"
+    },
+    {
+      "name": "justdirethings-1.5.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "justdirethings-1.5.5.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.6.2",
+      "filename": "justenoughbreeding-neoforge-1.21-1.21.1-1.6.2.jar"
+    },
+    {
+      "name": "JustEnoughMekanismMultiblocks-1.21.1-7.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "JustEnoughMekanismMultiblocks-1.21.1-7.9.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "4.0.4",
+      "filename": "JustEnoughProfessions-neoforge-1.21.1-4.0.4.jar"
+    },
+    {
+      "name": "Just Zoom",
+      "loader": "unknown",
+      "version": "2.1.0",
+      "filename": "justzoom_neoforge_2.1.0_MC_1.21.1.jar"
+    },
+    {
+      "name": "keybindbundles-1.3.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "keybindbundles-1.3.1.jar"
+    },
+    {
+      "name": "keybindspurger-1.21.x-neoforge-1.3.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "keybindspurger-1.21.x-neoforge-1.3.4.jar"
+    },
+    {
+      "name": "Konkrete",
+      "loader": "unknown",
+      "version": "1.9.9",
+      "filename": "konkrete_neoforge_1.9.9_MC_1.21.jar"
+    },
+    {
+      "name": "kotlinforforge-5.10.0-all",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "kotlinforforge-5.10.0-all.jar"
+    },
+    {
+      "name": "KubeJS-1.21.1",
+      "loader": "unknown",
+      "version": "2101.7.1-build.181",
+      "filename": "kubejs-neoforge-2101.7.1-build.181.jar"
+    },
+    {
+      "name": "kubejstweaks-0.0.9-beta",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "kubejstweaks-0.0.9-beta.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "5",
+      "filename": "laserbridges-1.21.1-neoforge-5.jar"
+    },
+    {
+      "name": "laserio-1.9.11",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "laserio-1.9.11.jar"
+    },
+    {
+      "name": "LegendaryTooltips-1.21.1-neoforge-1.5.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "LegendaryTooltips-1.21.1-neoforge-1.5.5.jar"
+    },
+    {
+      "name": "lionfishapi-2.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "lionfishapi-2.6.jar"
+    },
+    {
+      "name": "lithostitched-1.5.0+beta4-neoforge-1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "lithostitched-1.5.0+beta4-neoforge-1.21.1.jar"
+    },
+    {
+      "name": "little-big-redstone-1.4.3-beta-1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "little-big-redstone-1.4.3-beta-1.21.1.jar"
+    },
+    {
+      "name": "livingthings-neoforge-1.21.1-2.3.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "livingthings-neoforge-1.21.1-2.3.0.jar"
+    },
+    {
+      "name": "lmft-1.0.4+1.21-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "lmft-1.0.4+1.21-neoforge.jar"
+    },
+    {
+      "name": "lootr-neoforge-1.21-1.10.35.91",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "lootr-neoforge-1.21-1.10.35.91.jar"
+    },
+    {
+      "name": "luminax-1.3.1_neoforge_1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "luminax-1.3.1_neoforge_1.21.1.jar"
+    },
+    {
+      "name": "L_Ender's Cataclysm 1.21.1-3.16",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "L_Ender's Cataclysm 1.21.1-3.16.jar"
+    },
+    {
+      "name": "Mahou Tsukai",
+      "loader": "forge",
+      "version": "${version}",
+      "filename": "mahoutsukai-1.21.1-v1.36.2.jar"
+    },
+    {
+      "name": "McJtyLib",
+      "loader": "unknown",
+      "version": "1.21-9.0.12",
+      "filename": "mcjtylib-1.21-9.0.12.jar"
+    },
+    {
+      "name": "mcw-bridges-3.1.1-mc1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-bridges-3.1.1-mc1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-doors-1.1.2-mc1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-doors-1.1.2-mc1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-fences-1.2.0-1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-fences-1.2.0-1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-furniture-3.3.0-mc1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-furniture-3.3.0-mc1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-lights-1.1.2-mc1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-lights-1.1.2-mc1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-mcwholidays-1.1.1-mc1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-mcwholidays-1.1.1-mc1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-paths-1.1.0neoforge-mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-paths-1.1.0neoforge-mc1.21.1.jar"
+    },
+    {
+      "name": "mcw-roofs-2.3.2-mc1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-roofs-2.3.2-mc1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-stairs-1.0.1-1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-stairs-1.0.1-1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-trapdoors-1.1.4-mc1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-trapdoors-1.1.4-mc1.21.1neoforge.jar"
+    },
+    {
+      "name": "mcw-windows-2.4.0-1.21.1neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mcw-windows-2.4.0-1.21.1neoforge.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "3.0.3",
+      "filename": "Measurements-neoforge-1.21.1-3.0.3.jar"
+    },
+    {
+      "name": "megacells-4.10.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "megacells-4.10.1.jar"
+    },
+    {
+      "name": "Mekanism",
+      "loader": "unknown",
+      "version": "10.7.15",
+      "filename": "Mekanism-1.21.1-10.7.15.81.jar"
+    },
+    {
+      "name": "mekanismcovers-1.3-BETA+1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mekanismcovers-1.3-BETA+1.21.jar"
+    },
+    {
+      "name": "MekanismGenerators",
+      "loader": "unknown",
+      "version": "10.7.15",
+      "filename": "MekanismGenerators-1.21.1-10.7.15.81.jar"
+    },
+    {
+      "name": "MekanismTools",
+      "loader": "unknown",
+      "version": "10.7.15",
+      "filename": "MekanismTools-1.21.1-10.7.15.81.jar"
+    },
+    {
+      "name": "mekanisticrouters-1.1.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mekanisticrouters-1.1.1.jar"
+    },
+    {
+      "name": "mekmm-1.21.1-1.0.4.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mekmm-1.21.1-1.0.4.1.jar"
+    },
+    {
+      "name": "Melody",
+      "loader": "unknown",
+      "version": "1.0.10",
+      "filename": "melody_neoforge_1.0.10_MC_1.21.jar"
+    },
+    {
+      "name": "memorysettings-1.21-5.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "memorysettings-1.21-5.9.jar"
+    },
+    {
+      "name": "merequester-neoforge-1.21.1-1.4.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "merequester-neoforge-1.21.1-1.4.1.jar"
+    },
+    {
+      "name": "merrymaking-1.21.1-10",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "merrymaking-1.21.1-10.jar"
+    },
+    {
+      "name": "mes-1.4.6-1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mes-1.4.6-1.21.jar"
+    },
+    {
+      "name": "mffs",
+      "loader": "unknown",
+      "version": "5.4.17",
+      "filename": "mffs-5.4.17.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2.1.0",
+      "filename": "mifa-neoforge-1.21.x-2.1.0.jar"
+    },
+    {
+      "name": "minecolonies",
+      "loader": "unknown",
+      "version": "1.1.1121-1.21.1-snapshot",
+      "filename": "minecolonies-1.1.1121-1.21.1-snapshot.jar"
+    },
+    {
+      "name": "mininggadgets-1.18.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mininggadgets-1.18.6.jar"
+    },
+    {
+      "name": "mns-1.0.8-1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mns-1.0.8-1.21.jar"
+    },
+    {
+      "name": "mob_grinding_utils",
+      "loader": "unknown",
+      "version": "1.1.10+mc1.21.1",
+      "filename": "mob_grinding_utils-1.1.10+mc1.21.1.jar"
+    },
+    {
+      "name": "modelfix-1.21-1.10",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "modelfix-1.21-1.10.jar"
+    },
+    {
+      "name": "Modern-Dynamics-0.9.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Modern-Dynamics-0.9.6.jar"
+    },
+    {
+      "name": "Modern-Industrialization-2.3.11",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Modern-Industrialization-2.3.11.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "5.24.3+mc1.21.1",
+      "filename": "modernfix-neoforge-5.24.3+mc1.21.1.jar"
+    },
+    {
+      "name": "neo",
+      "loader": "unknown",
+      "version": "1.110.0",
+      "filename": "modonomicon-1.21.1-neoforge-1.115.1.jar"
+    },
+    {
+      "name": "modularrouters.patchouli.book.name",
+      "loader": "unknown",
+      "version": 1,
+      "filename": "modular-routers-13.2.3+mc1.21.1.jar"
+    },
+    {
+      "name": "modular_machinery_reborn-1.21.1-2.3.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "modular_machinery_reborn-1.21.1-2.3.2.jar"
+    },
+    {
+      "name": "modular_machinery_reborn_ars-1.21.1-2.0.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "modular_machinery_reborn_ars-1.21.1-2.0.3.jar"
+    },
+    {
+      "name": "modular_machinery_reborn_mekanism-1.21.1-2.0.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "modular_machinery_reborn_mekanism-1.21.1-2.0.6.jar"
+    },
+    {
+      "name": "monocle-0.2.2.ms",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "monocle-0.2.2.ms.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2.1.0",
+      "filename": "monolib-neoforge-1.21.1-2.1.0.jar"
+    },
+    {
+      "name": "moonlight-1.21-2.23.8-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "moonlight-1.21-2.23.8-neoforge.jar"
+    },
+    {
+      "name": "moredragoneggs-5.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "moredragoneggs-5.0.jar"
+    },
+    {
+      "name": "moreoverlays-1.24.2-mc1.21.1-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "moreoverlays-1.24.2-mc1.21.1-neoforge.jar"
+    },
+    {
+      "name": "morered",
+      "loader": "unknown",
+      "version": "6.0.0.3",
+      "filename": "morered-1.21.1-6.0.0.3.jar"
+    },
+    {
+      "name": "MoreRed-CCT-Compat-1.21.1-1.3.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "MoreRed-CCT-Compat-1.21.1-1.3.0.jar"
+    },
+    {
+      "name": "mostructures-neoforge-1.6.0+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mostructures-neoforge-1.6.0+1.21.1.jar"
+    },
+    {
+      "name": "MouseTweaks-neoforge-mc1.21-2.26.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "MouseTweaks-neoforge-mc1.21-2.26.1.jar"
+    },
+    {
+      "name": "mss-1.3.5-1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mss-1.3.5-1.21.jar"
+    },
+    {
+      "name": "multipiston",
+      "loader": "unknown",
+      "version": "1.2.57-1.21.1",
+      "filename": "multipiston-1.2.57-1.21.1.jar"
+    },
+    {
+      "name": "mvs-4.3.0-1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "mvs-4.3.0-1.21.jar"
+    },
+    {
+      "name": "MysticalAgradditions-1.21.1-8.0.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "MysticalAgradditions-1.21.1-8.0.9.jar"
+    },
+    {
+      "name": "MysticalAgriculture-1.21.1-8.0.19",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "MysticalAgriculture-1.21.1-8.0.19.jar"
+    },
+    {
+      "name": "MysticalCustomization-1.21.1-6.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "MysticalCustomization-1.21.1-6.0.0.jar"
+    },
+    {
+      "name": "MythsAndLegends-neoforge-1.7.2-Hotfix",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "MythsAndLegends-neoforge-1.7.2-Hotfix.jar"
+    },
+    {
+      "name": "NaturesAura-41.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "NaturesAura-41.9.jar"
+    },
+    {
+      "name": "NaturesCompass-1.21.1-3.0.3-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "NaturesCompass-1.21.1-3.0.3-neoforge.jar"
+    },
+    {
+      "name": "NeoAuth",
+      "loader": "unknown",
+      "version": "1.0.0",
+      "filename": "NeoAuth-1.21.1-1.0.0.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.1",
+      "filename": "netherportalfix-neoforge-1.21.1-21.1.1.jar"
+    },
+    {
+      "name": "No Chat Reports",
+      "loader": "unknown",
+      "version": "1.21.1-v2.9.1",
+      "filename": "NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar"
+    },
+    {
+      "name": "Nolijium",
+      "loader": "fabric",
+      "version": "0.5.6",
+      "filename": "nolijium-0.5.6.jar"
+    },
+    {
+      "name": "NotEnoughAnimations",
+      "loader": "forge",
+      "version": "1.10.2",
+      "filename": "notenoughanimations-neoforge-1.10.2-mc1.21.jar"
+    },
+    {
+      "name": "NotEnoughGlyphs",
+      "loader": "unknown",
+      "version": "4.2.2.1",
+      "filename": "not_enough_glyphs-1.21.1-4.2.2.1.jar"
+    },
+    {
+      "name": "novillagerdm-1.21.1-6.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "novillagerdm-1.21.1-6.0.0.jar"
+    },
+    {
+      "name": "Nullscape",
+      "loader": "fabric",
+      "version": "1.2.12",
+      "filename": "Nullscape_1.21.x_v1.2.12.jar"
+    },
+    {
+      "name": "observable-5.4.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "observable-5.4.4.jar"
+    },
+    {
+      "name": "Occultism 1.21.1",
+      "loader": "unknown",
+      "version": "1.191.0",
+      "filename": "occultism-1.21.1-neoforge-1.191.0.jar"
+    },
+    {
+      "name": "Occultism KubeJS 1.21.1",
+      "loader": "unknown",
+      "version": "1.8.0",
+      "filename": "occultism_kubejs-1.21.1-neoforge-1.8.0.jar"
+    },
+    {
+      "name": "OctoLib-NEOFORGE-0.5.0.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "OctoLib-NEOFORGE-0.5.0.1.jar"
+    },
+    {
+      "name": "Oh-The-Biomes-Weve-Gone-NeoForge-2.4.7",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Oh-The-Biomes-Weve-Gone-NeoForge-2.4.7.jar"
+    },
+    {
+      "name": "Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.0.14",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.0.14.jar"
+    },
+    {
+      "name": "omegaconfig-neoforge-1.5.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "omegaconfig-neoforge-1.5.1.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.5",
+      "filename": "OpenLoader-neoforge-1.21.1-21.1.5.jar"
+    },
+    {
+      "name": "oracle_index-neoforge-0.4.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "oracle_index-neoforge-0.4.1.jar"
+    },
+    {
+      "name": "oritech-neoforge-0.17.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "oritech-neoforge-0.17.3.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "2",
+      "filename": "overloadedarmorbar-neoforge-1.21-2.jar"
+    },
+    {
+      "name": "owo-lib-neoforge-0.12.15.5-beta.1+1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar"
+    },
+    {
+      "name": "pamhc2crops-NEOFORGE-1.21.1-1.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "pamhc2crops-NEOFORGE-1.21.1-1.0.0.jar"
+    },
+    {
+      "name": "pamhc2foodcore-NEOFORGE-1.21.1-1.0.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "pamhc2foodcore-NEOFORGE-1.21.1-1.0.4.jar"
+    },
+    {
+      "name": "pamhc2foodextended-NEOFORGE-1.21.1-1.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "pamhc2foodextended-NEOFORGE-1.21.1-1.0.0.jar"
+    },
+    {
+      "name": "pamhc2trees-NEOFORGE-1.21.1-1.0.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "pamhc2trees-NEOFORGE-1.21.1-1.0.4.jar"
+    },
+    {
+      "name": "Patchouli",
+      "loader": "unknown",
+      "version": "1.21.1-92-NEOFORGE",
+      "filename": "Patchouli-1.21.1-92-NEOFORGE.jar"
+    },
+    {
+      "name": "Pipez",
+      "loader": "unknown",
+      "version": "1.21.1-1.2.19",
+      "filename": "pipez-neoforge-1.21.1-1.2.19.jar"
+    },
+    {
+      "name": "Placebo",
+      "loader": "unknown",
+      "version": "9.9.1",
+      "filename": "Placebo-1.21.1-9.9.1.jar"
+    },
+    {
+      "name": "player-animation-lib-forge-2.0.1+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "player-animation-lib-forge-2.0.1+1.21.1.jar"
+    },
+    {
+      "name": "playerxp-neoforge-1.0.2+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "playerxp-neoforge-1.0.2+1.21.1.jar"
+    },
+    {
+      "name": "pneumaticcraft-repressurized-8.2.13+mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "pneumaticcraft-repressurized-8.2.13+mc1.21.1.jar"
+    },
+    {
+      "name": "pocketstorage",
+      "loader": "unknown",
+      "version": "1.2.5+1.21.1-b3",
+      "filename": "pocketstorage-1.2.5+1.21.1-b3.jar"
+    },
+    {
+      "name": "polyeng-0.4.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "polyeng-0.4.1.jar"
+    },
+    {
+      "name": "PolyLib",
+      "loader": "unknown",
+      "version": "2100.0.3-build.172",
+      "filename": "polylib-2100.0.3-build.172-neoforge.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.1.0+1.21.1",
+      "filename": "polymorph-neoforge-1.1.0+1.21.1.jar"
+    },
+    {
+      "name": "ponderjs-neoforge-1.21.1-2.1.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "ponderjs-neoforge-1.21.1-2.1.3.jar"
+    },
+    {
+      "name": "PotionsMaster",
+      "loader": "unknown",
+      "version": "0.7.1-packdev",
+      "filename": "potionsmaster-21.1.113-0.7.1-packdev.jar"
+    },
+    {
+      "name": "Powah-6.2.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Powah-6.2.6.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.11",
+      "filename": "prickle-neoforge-1.21.1-21.1.11.jar"
+    },
+    {
+      "name": "Prism-1.21.1-neoforge-1.0.11",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Prism-1.21.1-neoforge-1.0.11.jar"
+    },
+    {
+      "name": "productivebees-1.21.1-13.10.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "productivebees-1.21.1-13.10.0.jar"
+    },
+    {
+      "name": "productivemetalworks-1.21.1-1.11.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "productivemetalworks-1.21.1-1.11.0.jar"
+    },
+    {
+      "name": "productivetrees-1.21.1-0.7.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "productivetrees-1.21.1-0.7.1.jar"
+    },
+    {
+      "name": "pylons",
+      "loader": "unknown",
+      "version": "5.2.1",
+      "filename": "pylons-1.21.1-5.2.1.jar"
+    },
+    {
+      "name": "railcraft",
+      "loader": "unknown",
+      "version": "1.21.1-1.2.7",
+      "filename": "railcraft-reborn-1.21.1-1.2.7.jar"
+    },
+    {
+      "name": "Rainbows-1.21-1.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Rainbows-1.21-1.5.jar"
+    },
+    {
+      "name": "rangedpumps-1.3.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "rangedpumps-1.3.0.jar"
+    },
+    {
+      "name": "rarcompat",
+      "loader": "unknown",
+      "version": "1.21-0.9.6",
+      "filename": "rarcompat-1.21-0.9.6.jar"
+    },
+    {
+      "name": "rctapi-neoforge-1.21.1-0.13.8-beta",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "rctapi-neoforge-1.21.1-0.13.8-beta.jar"
+    },
+    {
+      "name": "rctmod-neoforge-1.21.1-0.16.8-beta",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "rctmod-neoforge-1.21.1-0.16.8-beta.jar"
+    },
+    {
+      "name": "Reap Mod",
+      "loader": "unknown",
+      "version": "1.21.1-1.1.2",
+      "filename": "reap-neoforge-1.21.1-1.1.2.jar"
+    },
+    {
+      "name": "rebind_narrator-1.21.1-neoforge-2025.09.11",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "rebind_narrator-1.21.1-neoforge-2025.09.11.jar"
+    },
+    {
+      "name": "rechiseled-1.1.6a-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "rechiseled-1.1.6a-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "rechiseledcreate-1.0.2a-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "rechiseledcreate-1.0.2a-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "rechiseled_chipped-1.3-1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "rechiseled_chipped-1.3-1.21.1.jar"
+    },
+    {
+      "name": "redstonepen-1.21-neoforge-1.11.42",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "redstonepen-1.21-neoforge-1.11.42.jar"
+    },
+    {
+      "name": "refined-types-1.21.1-0.1.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "refined-types-1.21.1-0.1.3.jar"
+    },
+    {
+      "name": "refinedstorage-curios-integration-1.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "refinedstorage-curios-integration-1.0.0.jar"
+    },
+    {
+      "name": "refinedstorage-jei-integration-neoforge-1.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "refinedstorage-jei-integration-neoforge-1.0.0.jar"
+    },
+    {
+      "name": "refinedstorage-mekanism-integration-1.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "refinedstorage-mekanism-integration-1.0.0.jar"
+    },
+    {
+      "name": "refinedstorage-neoforge-2.0.0-beta.13",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "refinedstorage-neoforge-2.0.0-beta.13.jar"
+    },
+    {
+      "name": "refinedstorage-quartz-arsenal-neoforge-1.0.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "refinedstorage-quartz-arsenal-neoforge-1.0.6.jar"
+    },
+    {
+      "name": "com/mrcrayfish/furniture/refurbished/inventory/BuildableContainerD",
+      "loader": "unknown",
+      "version": "1.21.1-1.0.16",
+      "filename": "refurbished_furniture-neoforge-1.21.1-1.0.16.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "0.5.6.2",
+      "filename": "regions_unexplored-neoforge-1.21.1-0.5.6.1.jar"
+    },
+    {
+      "name": "relics",
+      "loader": "unknown",
+      "version": "1.21.1-0.10.7.5",
+      "filename": "relics-1.21.1-0.10.7.5.jar"
+    },
+    {
+      "name": "Reliquary",
+      "loader": "unknown",
+      "version": "1.21.1-2.0.61.1305",
+      "filename": "reliquary-1.21.1-2.0.61.1305.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.0.2",
+      "filename": "repeatable_trial_vaults-neoforge-1.21-1.0.2.jar"
+    },
+    {
+      "name": "repurposed_structures-7.5.17+1.21.1-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "repurposed_structures-7.5.17+1.21.1-neoforge.jar"
+    },
+    {
+      "name": "resourcefulconfig-neoforge-1.21-3.0.11",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "resourcefulconfig-neoforge-1.21-3.0.11.jar"
+    },
+    {
+      "name": "resourcefullib-neoforge-1.21-3.0.12",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "resourcefullib-neoforge-1.21-3.0.12.jar"
+    },
+    {
+      "name": "Restrictions",
+      "loader": "unknown",
+      "version": "1.21-7.0.3",
+      "filename": "restrictions-1.21-7.0.3.jar"
+    },
+    {
+      "name": "RFToolsBase",
+      "loader": "unknown",
+      "version": "1.21-6.0.8",
+      "filename": "rftoolsbase-1.21-6.0.8.jar"
+    },
+    {
+      "name": "RFToolsBuilder",
+      "loader": "unknown",
+      "version": "1.21-7.0.3",
+      "filename": "rftoolsbuilder-1.21-7.0.3.jar"
+    },
+    {
+      "name": "RFToolsPower",
+      "loader": "unknown",
+      "version": "1.21-7.0.3",
+      "filename": "rftoolspower-1.21-7.0.3.jar"
+    },
+    {
+      "name": "RFToolsStorage",
+      "loader": "unknown",
+      "version": "1.21-6.0.3",
+      "filename": "rftoolsstorage-1.21-6.0.3.jar"
+    },
+    {
+      "name": "RFToolsUtility",
+      "loader": "unknown",
+      "version": "1.21-7.0.8",
+      "filename": "rftoolsutility-1.21-7.0.8.jar"
+    },
+    {
+      "name": "Rhino",
+      "loader": "fabric",
+      "version": "2101.2.7-build.77",
+      "filename": "rhino-2101.2.7-build.77.jar"
+    },
+    {
+      "name": "RootsClassic",
+      "loader": "unknown",
+      "version": "1.21.1-1.5.5",
+      "filename": "RootsClassic-1.21.1-1.5.5.jar"
+    },
+    {
+      "name": "SafePastures-1.1.0+1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "SafePastures-1.1.0+1.21.1.jar"
+    },
+    {
+      "name": "sawmill-1.21-1.7.0-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "sawmill-1.21-1.7.0-neoforge.jar"
+    },
+    {
+      "name": "cats/syntax/Function11ApplyOps.tasty",
+      "loader": "unknown",
+      "version": "3.7.1-build-11",
+      "filename": "ScalableCatsForce-NeoForge-3.7.1-build-11-with-library.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.0.2",
+      "filename": "Searchables-neoforge-1.21.1-1.0.2.jar"
+    },
+    {
+      "name": "sgearmetalworks-1.21.1-1.4.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "sgearmetalworks-1.21.1-1.4.4.jar"
+    },
+    {
+      "name": "shiny-1.21.1-1.2.4",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "shiny-1.21.1-1.2.4.jar"
+    },
+    {
+      "name": "shrink-2.0.1.47-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "shrink-2.0.1.47-neoforge.jar"
+    },
+    {
+      "name": "silent-gear-1.21.1-neoforge-4.0.28.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "silent-gear-1.21.1-neoforge-4.0.28.1.jar"
+    },
+    {
+      "name": "silent-lib-1.21.1-neoforge-10.5.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "silent-lib-1.21.1-neoforge-10.5.1.jar"
+    },
+    {
+      "name": "silentgems-1.21.1-neoforge-5.1.2.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "silentgems-1.21.1-neoforge-5.1.2.1.jar"
+    },
+    {
+      "name": "SimpleBackups",
+      "loader": "unknown",
+      "version": "1.21-4.0.19",
+      "filename": "SimpleBackups-1.21-4.0.19.jar"
+    },
+    {
+      "name": "simplemagnets-1.1.12c-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "simplemagnets-1.1.12c-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "SimpleTMs-neoforge-2.1.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "SimpleTMs-neoforge-2.1.2.jar"
+    },
+    {
+      "name": "simple_weather-1.0.13",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "simple_weather-1.0.13.jar"
+    },
+    {
+      "name": "simplylight",
+      "loader": "unknown",
+      "version": "1.5.3+1.21.1-b4",
+      "filename": "simplylight-1.5.3+1.21.1-b4.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "1.16.10",
+      "filename": "SmartBrainLib-neoforge-1.21.1-1.16.10.jar"
+    },
+    {
+      "name": "smithingtemplateviewer-1.0.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "smithingtemplateviewer-1.0.3.jar"
+    },
+    {
+      "name": "Spice-of-Life-Carrot-Edition",
+      "loader": "unknown",
+      "version": "1.21.1-1.16.5",
+      "filename": "solcarrot-1.21.1-1.16.5.jar"
+    },
+    {
+      "name": "SophisticatedBackpacks",
+      "loader": "unknown",
+      "version": "1.21.1-3.25.6.1367",
+      "filename": "sophisticatedbackpacks-1.21.1-3.25.6.1367.jar"
+    },
+    {
+      "name": "SophisticatedBackpacksCreateIntegration",
+      "loader": "unknown",
+      "version": "1.21.1-0.1.3.13",
+      "filename": "sophisticatedbackpackscreateintegration-1.21.1-0.1.3.13.jar"
+    },
+    {
+      "name": "SophisticatedCore",
+      "loader": "unknown",
+      "version": "1.21.1-1.3.73.1154",
+      "filename": "sophisticatedcore-1.21.1-1.3.73.1154.jar"
+    },
+    {
+      "name": "SophisticatedStorage",
+      "loader": "unknown",
+      "version": "1.21.1-1.5.5.1293",
+      "filename": "sophisticatedstorage-1.21.1-1.5.5.1293.jar"
+    },
+    {
+      "name": "SophisticatedStorageCreateIntegration",
+      "loader": "unknown",
+      "version": "1.21.1-0.1.11.37",
+      "filename": "sophisticatedstoragecreateintegration-1.21.1-0.1.11.37.jar"
+    },
+    {
+      "name": "SophisticatedStorageInMotion",
+      "loader": "unknown",
+      "version": "1.21.1-0.10.19.124",
+      "filename": "sophisticatedstorageinmotion-1.21.1-0.10.19.124.jar"
+    },
+    {
+      "name": "soulplied_energistics-1.0.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "soulplied_energistics-1.0.2.jar"
+    },
+    {
+      "name": "spark-1.10.124-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "spark-1.10.124-neoforge.jar"
+    },
+    {
+      "name": "StarbuncleMania",
+      "loader": "unknown",
+      "version": "1.5.1",
+      "filename": "starbunclemania-1.21.1-1.5.1.jar"
+    },
+    {
+      "name": "stevescarts-1.21-1.2.16-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "stevescarts-1.21-1.2.16-neoforge.jar"
+    },
+    {
+      "name": "storagedelight-25.06.24-1.21-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "storagedelight-25.06.24-1.21-neoforge.jar"
+    },
+    {
+      "name": "Structory",
+      "loader": "fabric",
+      "version": "1.3.12",
+      "filename": "Structory_1.21.x_v1.3.11.jar"
+    },
+    {
+      "name": "Structory: Towers",
+      "loader": "fabric",
+      "version": "1.0.13",
+      "filename": "Structory_Towers_1.21.x_v1.0.13.jar"
+    },
+    {
+      "name": "structurize",
+      "loader": "unknown",
+      "version": "1.0.787-1.21.1-snapshot",
+      "filename": "structurize-1.0.787-1.21.1-snapshot.jar"
+    },
+    {
+      "name": "stylecolonies",
+      "loader": "unknown",
+      "version": "1.15.29-1.21.1",
+      "filename": "stylecolonies-1.15.29-1.21.1.jar"
+    },
+    {
+      "name": "Super Factory Manager (SFM)-MC1.21.1-4.25.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Super Factory Manager (SFM)-MC1.21.1-4.25.0.jar"
+    },
+    {
+      "name": "supermartijn642configlib-1.1.8-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "supermartijn642configlib-1.1.8-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "supermartijn642corelib-1.1.18a-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "supermartijn642corelib-1.1.18a-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "supplementaries-1.21-3.4.16-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "supplementaries-1.21-3.4.16-neoforge.jar"
+    },
+    {
+      "name": "sushigocrafting-1.21-0.6.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "sushigocrafting-1.21-0.6.5.jar"
+    },
+    {
+      "name": "sussysniffers-1.21.1-0.1.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "sussysniffers-1.21.1-0.1.3.jar"
+    },
+    {
+      "name": "tempad-1.21.1-3.0.4-all",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "tempad-1.21.1-3.0.4-all.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "4.1.0.8",
+      "filename": "TerraBlender-neoforge-1.21.1-4.1.0.8.jar"
+    },
+    {
+      "name": "tesseract-api-neoforge-1.8.29-1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "tesseract-api-neoforge-1.8.29-1.21.1.jar"
+    },
+    {
+      "name": "Theurgy 1.21.1",
+      "loader": "unknown",
+      "version": "1.63.1",
+      "filename": "theurgy-1.21.1-neoforge-1.63.1.jar"
+    },
+    {
+      "name": "Theurgy KubeJS 1.21.1",
+      "loader": "unknown",
+      "version": "1.4.0",
+      "filename": "theurgy_kubejs-1.21.1-neoforge-1.4.0.jar"
+    },
+    {
+      "name": "the_bumblezone-7.11.0+1.21.1-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "the_bumblezone-7.11.0+1.21.1-neoforge.jar"
+    },
+    {
+      "name": "The Undergarden",
+      "loader": "unknown",
+      "version": "0.9.3",
+      "filename": "The_Undergarden-1.21.1-0.9.3.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "6.5.0",
+      "filename": "tiab-neoforge-6.5.0.jar"
+    },
+    {
+      "name": "timcore-neoforge-1.6.1-1.9.2",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "timcore-neoforge-1.6.1-1.9.2.jar"
+    },
+    {
+      "name": "Buuz135_Titanium_1.21",
+      "loader": "unknown",
+      "version": "4.0.40",
+      "filename": "titanium-1.21-4.0.40.jar"
+    },
+    {
+      "name": "ToastControl",
+      "loader": "unknown",
+      "version": "9.0.1",
+      "filename": "ToastControl-1.21.1-9.0.1.jar"
+    },
+    {
+      "name": "tombstone-neoforge-1.21.1-9.4.8",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "tombstone-neoforge-1.21.1-9.4.8.jar"
+    },
+    {
+      "name": "Tomtaru's Cobblemon  Farmer's Delight Tweaks - 1.21.1 - R.1.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "Tomtaru's Cobblemon  Farmer's Delight Tweaks - 1.21.1 - R.1.3.jar"
+    },
+    {
+      "name": "toolbelt",
+      "loader": "unknown",
+      "version": "2.2.6",
+      "filename": "ToolBelt-1.21.1-2.2.6.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.5-beta",
+      "filename": "torchmaster-neoforge-1.21.1-21.1.5-beta.jar"
+    },
+    {
+      "name": "TownTalk",
+      "loader": "forge",
+      "version": "${modVersion}",
+      "filename": "towntalk-1.2.0.jar"
+    },
+    {
+      "name": "transfer_labels-0.1.6",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "transfer_labels-0.1.6.jar"
+    },
+    {
+      "name": "trashcans-1.0.18c-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "trashcans-1.0.18c-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.4",
+      "filename": "trashslot-neoforge-1.21.1-21.1.4.jar"
+    },
+    {
+      "name": "treetap-1.21.1-0.4.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "treetap-1.21.1-0.4.5.jar"
+    },
+    {
+      "name": "trophymanager-1.21.1-2.2.9",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "trophymanager-1.21.1-2.2.9.jar"
+    },
+    {
+      "name": "s",
+      "loader": "unknown",
+      "version": "4.7.3196",
+      "filename": "twilightforest-1.21.1-4.7.3196-universal.jar"
+    },
+    {
+      "name": "Towns and Towers",
+      "loader": "fabric",
+      "version": "1.13.2",
+      "filename": "t_and_t-neoforge-fabric-1.13.2.jar"
+    },
+    {
+      "name": "forge",
+      "loader": "unknown",
+      "version": "4.0.3",
+      "filename": "UndergroundVillages-neoforge-1.21.1-4.0.3.jar"
+    },
+    {
+      "name": "universalgrid-neoforge-1.21.1-0.2.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "universalgrid-neoforge-1.21.1-0.2.3.jar"
+    },
+    {
+      "name": "uranus-2.3.1-1.21.1-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "uranus-2.3.1-1.21.1-neoforge.jar"
+    },
+    {
+      "name": "utilitarian-1.21.1-0.16.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "utilitarian-1.21.1-0.16.1.jar"
+    },
+    {
+      "name": "utilityvest-1.0.2_neoforge_1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "utilityvest-1.0.2_neoforge_1.21.1.jar"
+    },
+    {
+      "name": "valhelsia_core-neoforge-1.21.1-1.1.5",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "valhelsia_core-neoforge-1.21.1-1.1.5.jar"
+    },
+    {
+      "name": "variantsandventures-neoforge-1.0.18+mc1.21.1",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "variantsandventures-neoforge-1.0.18+mc1.21.1.jar"
+    },
+    {
+      "name": "villagesandpillages-neoforge-mc1.21.1-1.0.3",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "villagesandpillages-neoforge-mc1.21.1-1.0.3.jar"
+    },
+    {
+      "name": "neoforge",
+      "loader": "unknown",
+      "version": "21.1.23",
+      "filename": "waystones-neoforge-1.21.1-21.1.23.jar"
+    },
+    {
+      "name": "wirelesschargers-1.0.9a-neoforge-mc1.21",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "wirelesschargers-1.0.9a-neoforge-mc1.21.jar"
+    },
+    {
+      "name": "WitherSkeletonTweaks",
+      "loader": "unknown",
+      "version": "10.1.1",
+      "filename": "WitherSkeletonTweaks-1.21.1-10.1.1.jar"
+    },
+    {
+      "name": "wits-1.3.0+1.21-neoforge",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "wits-1.3.0+1.21-neoforge.jar"
+    },
+    {
+      "name": "XNet",
+      "loader": "unknown",
+      "version": "1.21-7.0.6",
+      "filename": "xnet-1.21-7.0.6.jar"
+    },
+    {
+      "name": "xtonesreworked-1.1.0-NF-1.21_21.0.167",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "xtonesreworked-1.1.0-NF-1.21_21.0.167.jar"
+    },
+    {
+      "name": "xycraft_core-0.7.53-all",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "xycraft_core-0.7.53-all.jar"
+    },
+    {
+      "name": "xycraft_machines-0.7.53",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "xycraft_machines-0.7.53.jar"
+    },
+    {
+      "name": "xycraft_override-0.7.53",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "xycraft_override-0.7.53.jar"
+    },
+    {
+      "name": "xycraft_world-0.7.53",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "xycraft_world-0.7.53.jar"
+    },
+    {
+      "name": "yeetusexperimentus-neoforge-87.0.0",
+      "loader": "unknown",
+      "version": "Unknown",
+      "filename": "yeetusexperimentus-neoforge-87.0.0.jar"
+    },
+    {
+      "name": "YetAnotherConfigLib",
+      "loader": "forge",
+      "version": "3.7.1+1.21.1-neoforge",
+      "filename": "yet_another_config_lib_v3-3.7.1+1.21.1-neoforge.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-5.1.6",
+      "filename": "YungsApi-1.21.1-NeoForge-5.1.6.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-4.1.5",
+      "filename": "YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-5.1.4",
+      "filename": "YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-3.1.2",
+      "filename": "YungsBetterEndIsland-1.21.1-NeoForge-3.1.2.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-3.1.2",
+      "filename": "YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-5.1.1",
+      "filename": "YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-3.1.5",
+      "filename": "YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-4.1.2",
+      "filename": "YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-5.1.3",
+      "filename": "YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-4.1.1",
+      "filename": "YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar"
+    },
+    {
+      "name": "NeoForge",
+      "loader": "unknown",
+      "version": "1.21.1-NeoForge-5.1.1",
+      "filename": "YungsExtras-1.21.1-NeoForge-5.1.1.jar"
+    },
+    {
+      "name": "Zero CORE 2",
+      "loader": "unknown",
+      "version": "1.21.1-2.4.18",
+      "filename": "ZeroCore2-1.21.1-2.4.18.jar"
+    },
+    {
+      "name": "SecurityCraft",
+      "loader": "unknown",
+      "version": "1.10",
+      "filename": "[1.21.1] SecurityCraft v1.10.jar"
+    },
+    {
+      "name": "ChoiceTheorem's Overhauled Village",
+      "loader": "forge",
+      "version": "${version}",
+      "filename": "[neoforge]ctov-3.5.10.jar"
+    }
+  ],
+  "total_mods": 505,
+  "generated_at": "2025-09-25T10:56:36.569523",
+  "errors": [
+    "No mod metadata found in accelerated-decay-neoforge-21.0.0.jar",
+    "No mod metadata found in additional_lights-neoforge-1.21-2.1.10.jar",
+    "No mod metadata found in AdvancedAE-1.4.5-1.21.1.jar",
+    "No mod metadata found in ae2ct-1.21.1-1.1.0.jar",
+    "No mod metadata found in ae2importexportcard-1.21-1.4.0.jar",
+    "No mod metadata found in ae2jeiintegration-1.2.0.jar",
+    "No mod metadata found in AE2NetworkAnalyzer-1.21-2.1.3-neoforge.jar",
+    "No mod metadata found in ae2wtlib-19.2.6.jar",
+    "No mod metadata found in aeinfinitybooster-neoforge-1.21.1-1.0.0.52.jar",
+    "No mod metadata found in aether-1.21.1-1.5.9-neoforge.jar",
+    "No mod metadata found in allthearcanistgear-1.21.1-21.3.2.jar",
+    "No mod metadata found in allthecompressed-1.21.1-4.3.0.jar",
+    "No mod metadata found in alltheores-3.1.7_neoforge_1.21.1.jar",
+    "No mod metadata found in almostunified-neoforge-1.21.1-1.3.0.jar",
+    "No mod metadata found in amendments-1.21-2.0.5-neoforge.jar",
+    "No mod metadata found in Applied-Mekanistics-1.6.2.jar",
+    "No mod metadata found in appliedenergistics2-19.2.16.jar",
+    "No mod metadata found in AppliedFlux-1.21-2.1.3-neoforge.jar",
+    "No mod metadata found in Aquaculture-1.21.1-2.7.14.jar",
+    "No mod metadata found in architectury-13.0.8-neoforge.jar",
+    "No mod metadata found in arseng-2.1.1-beta.jar",
+    "No mod metadata found in ars_additions-1.21.1-21.2.3.jar",
+    "No mod metadata found in ars_controle-1.21.1-1.6.10.jar",
+    "No mod metadata found in ars_ocultas-1.21.1-2.2.0.jar",
+    "No mod metadata found in ars_polymorphia-1.0.3.jar",
+    "No mod metadata found in ars_unification-1.2.16.jar",
+    "No mod metadata found in artifacts-neoforge-13.0.7.jar",
+    "No mod metadata found in athena-neoforge-1.21-4.0.2.jar",
+    "No mod metadata found in atlas_api-1.21.1-1.2.0.jar",
+    "No mod metadata found in Auroras-1.21-1.6.2.jar",
+    "No mod metadata found in badgebox-neoforge-1.3.0.jar",
+    "No mod metadata found in baubley-heart-canisters-1.21.1-1.2.3.jar",
+    "No mod metadata found in bcc-21.1.3+mc1.21.1.jar",
+    "No mod metadata found in BetterAdvancements-NeoForge-1.21.1-0.4.3.21.jar",
+    "No mod metadata found in bibliobiomes-1.21.1-1.6.0.jar",
+    "No mod metadata found in bibliowoods-1.21.1-1.6.0.jar",
+    "No mod metadata found in blueflame-1.21.1-1.1.1.jar",
+    "No mod metadata found in BridgingMod-2.6.2+1.21.1.neoforge-release.jar",
+    "No mod metadata found in buildinggadgets2-1.3.9.jar",
+    "No mod metadata found in cabletiers-neoforge-1.21.1-0.3.1.jar",
+    "No mod metadata found in camol-1.21.1-0.3.0.jar",
+    "No mod metadata found in capturexp-neoforge-1.6.1-1.2.1.jar",
+    "No mod metadata found in charginggadgets-1.14.1.jar",
+    "No mod metadata found in chipped-neoforge-1.21.1-4.0.2.jar",
+    "No mod metadata found in chisel-neoforge-2.0.0+mc1.21.1.jar",
+    "No mod metadata found in chromacarvings-1.21.1-0.2.0.jar",
+    "No mod metadata found in cleanswing-1.9.jar",
+    "No mod metadata found in cloth-config-15.0.140-neoforge.jar",
+    "No mod metadata found in CobbleDollars-neoforge-2.0.0+Beta-5.1+1.21.1.jar",
+    "No mod metadata found in cobblegengalore-1.21.1-0.2.7.jar",
+    "No mod metadata found in cobblemon-counter-1.6-neoforge-1.5.1.jar",
+    "No mod metadata found in Cobblemon-neoforge-1.6.1+1.21.1.jar",
+    "No mod metadata found in cobblemon-spawn-notification-1.6-neoforge-1.3.8.jar",
+    "No mod metadata found in Cobblemon-Utility+-neoforge-1.6.2.jar",
+    "No mod metadata found in CobblemonAlphasNeoforge-1.1+1.6.1.jar",
+    "No mod metadata found in cobblemonextrastructures-1.21.1-1.2.0-neoforge.jar",
+    "No mod metadata found in CobblemonSizeVariationNeoforge-1.2.0+1.6.1.jar",
+    "No mod metadata found in Cobblemon_MegaShowdown-10.0.8-release-neoforge.jar",
+    "No mod metadata found in cobblemon_quests-[1.21.1]-neoforge-1.1.14.jar",
+    "No mod metadata found in cobblenav-neoforge-2.2.3.jar",
+    "No mod metadata found in Cobblepedia-NeoForge-0.7.0.jar",
+    "No mod metadata found in cobbleride-neoforge-0.3.3+1.21.1.jar",
+    "No mod metadata found in cobgyms-neoforge-3.0.1+1.21.1.jar",
+    "No mod metadata found in colorfulhearts-neoforge-1.21.1-10.5.9.jar",
+    "No mod metadata found in connectedglass-1.1.14-neoforge-mc1.21.jar",
+    "No mod metadata found in connectivity-1.21.1-7.1.jar",
+    "No mod metadata found in Corgilib-NeoForge-1.21.1-5.0.0.7.jar",
+    "No mod metadata found in cosmeticarmorreworked-1.21.1-v1-neoforge.jar",
+    "No mod metadata found in crafting_on_a_stick-1.21.0.2.jar",
+    "No mod metadata found in crashutilities-9.0.4.jar",
+    "No mod metadata found in create-dragons-plus-1.8.0b.jar",
+    "No mod metadata found in create-enchantment-industry-2.2.2b.jar",
+    "No mod metadata found in createaddition-1.5.3.jar",
+    "No mod metadata found in createcobblemonballsoverhaul-0.0.3.jar",
+    "No mod metadata found in create_aquatic_ambitions-1.21.1-2.0.1.jar",
+    "No mod metadata found in create_hypertube-0.2.5-NEOFORGE.jar",
+    "No mod metadata found in CreeperOverhaul-neoforge-1.21.1-4.0.6.jar",
+    "No mod metadata found in cristellib-neoforge-1.2.8.jar",
+    "No mod metadata found in cryonicconfig-neoforge-1.0.0+mc1.21.8.jar",
+    "No mod metadata found in crystalix-1.6.0_neoforge_1.21.1.jar",
+    "No mod metadata found in Cucumber-1.21.1-8.0.14.jar",
+    "No mod metadata found in cupboard-1.21-2.9.jar",
+    "No mod metadata found in darkmodeeverywhere-1.21-1.3.5.jar",
+    "No mod metadata found in deeperdarker-neoforge-1.21.1-1.3.5.jar",
+    "No mod metadata found in dummmmmmy-1.21-2.0.9-neoforge.jar",
+    "No mod metadata found in DungeonCrawl-NeoForge-1.21-2.3.15.jar",
+    "No mod metadata found in DungeonsArise-1.21.x-2.1.64-release.jar",
+    "No mod metadata found in dyenamics-1.21.1-3.4.1.jar",
+    "No mod metadata found in dyenamicsandfriends-1.21.1-2.2.0.jar",
+    "No mod metadata found in elevatorid-neoforge-1.21.1-1.11.4.jar",
+    "No mod metadata found in embeddium-1.0.15+mc1.21.1.jar",
+    "No mod metadata found in enderio-7.1.8-alpha.jar",
+    "No mod metadata found in endermanoverhaul-neoforge-1.21.1-2.0.2.jar",
+    "No mod metadata found in entangled-1.3.20a-neoforge-mc1.21.jar",
+    "No mod metadata found in Essential_1-3-9-1_neoforge_1-21-1.jar",
+    "No mod metadata found in eternalstarlight-0.5.1+1.21.1+neoforge.jar",
+    "No mod metadata found in everythingcopper-1.21.1-2.4.5.jar",
+    "No mod metadata found in expandedae-2.1.1.jar",
+    "No mod metadata found in experiencelib-1.21.1-1.1.1.jar",
+    "No mod metadata found in ExplorersCompass-1.21.1-3.0.3-neoforge.jar",
+    "No mod metadata found in extended-industrialization-1.15.8-1.21.1.jar",
+    "No mod metadata found in ExtendedAE-1.21-2.2.22-neoforge.jar",
+    "No mod metadata found in ExtremeSoundMuffler-3.51_NeoForge-1.21.jar",
+    "No mod metadata found in factory_blocks-neoforge-1.4.0+mc1.21.1.jar",
+    "No mod metadata found in FarmersDelight-1.21.1-1.2.9.jar",
+    "No mod metadata found in ferritecore-7.0.2-neoforge.jar",
+    "No mod metadata found in fightorflight-neoforge-0.8.3.jar",
+    "No mod metadata found in fireproofboats-1.21.1-1.0.4.jar",
+    "No mod metadata found in flickerfix-1.21.0.jar",
+    "No mod metadata found in FluxNetworks-1.21.1-8.0.0.jar",
+    "No mod metadata found in forbidden_arcanus-2.6.1.jar",
+    "No mod metadata found in formations-1.0.4-neoforge-mc1.21.jar",
+    "No mod metadata found in FramedBlocks-10.4.0.jar",
+    "No mod metadata found in ftb-essentials-neoforge-2101.1.7.jar",
+    "No mod metadata found in ftb-filter-system-neoforge-21.1.3.jar",
+    "No mod metadata found in ftb-jei-extras-21.1.7.jar",
+    "No mod metadata found in ftb-ultimine-neoforge-2101.1.9.jar",
+    "No mod metadata found in ftb-xmod-compat-neoforge-21.1.6.jar",
+    "No mod metadata found in fuelgoeshere-1.21.1-1.2.0.jar",
+    "No mod metadata found in fusion-1.2.11a-neoforge-mc1.21.jar",
+    "No mod metadata found in fzzy_config-0.7.2+1.21+neoforge.jar",
+    "No mod metadata found in generatorgalore-1.21.1-1.6.3.jar",
+    "No mod metadata found in Glassential-renewed-1.21.1-3.3.2.jar",
+    "No mod metadata found in Glodium-1.21-2.2-neoforge.jar",
+    "No mod metadata found in GravitationalModulatingAdditionalUnit-1.21.1-6.4.jar",
+    "No mod metadata found in guideme-21.1.14.jar",
+    "No mod metadata found in handcrafted-neoforge-1.21.1-4.0.3.jar",
+    "No mod metadata found in hardenedarmadillos-1.21.1-0.2.0.jar",
+    "No mod metadata found in herbsandharvest-1.21.1-2.jar",
+    "No mod metadata found in heyberryshutup-1.21.0-2.0.4.jar",
+    "No mod metadata found in IceAndFireCE-1.1-1.21.1-neoforge.jar",
+    "No mod metadata found in Iceberg-1.21.1-neoforge-1.3.2.jar",
+    "No mod metadata found in imfast-NEOFORGE-1.0.2.jar",
+    "No mod metadata found in ImmediatelyFast-NeoForge-1.6.6+1.21.1.jar",
+    "No mod metadata found in Immersive-Energistics-1.1.0-beta.jar",
+    "No mod metadata found in ImmersiveEngineering-1.21.1-12.4.2-194.jar",
+    "No mod metadata found in industrial-foregoing-souls-1.21.1-1.10.4.jar",
+    "No mod metadata found in industrialforegoing-1.21-3.6.34.jar",
+    "No mod metadata found in industrialization_overdrive-1.10.2+1.21.1.jar",
+    "No mod metadata found in interdimensionalwirelesstransmitter-neoforge-1.21.1-0.1.5.jar",
+    "No mod metadata found in invtweaks-1.21.1-1.3.2.jar",
+    "No mod metadata found in iris-neoforge-1.8.12+mc1.21.1.jar",
+    "No mod metadata found in ironfurnaces-neoforge-1.21.1-4.3.1.jar",
+    "No mod metadata found in IronJetpacks-1.21.1-8.0.10.jar",
+    "No mod metadata found in irons_jewelry-1.21.1-1.5.2.jar",
+    "No mod metadata found in itemcollectors-1.1.10-neoforge-mc1.21.jar",
+    "No mod metadata found in jearchaeology-1.21.1-1.1.6.jar",
+    "No mod metadata found in jumpboat-1.21.0-1.0.5.jar",
+    "No mod metadata found in Jupiter-2.2.2-neoforge.jar",
+    "No mod metadata found in justdirethings-1.5.5.jar",
+    "No mod metadata found in JustEnoughMekanismMultiblocks-1.21.1-7.9.jar",
+    "No mod metadata found in keybindbundles-1.3.1.jar",
+    "No mod metadata found in keybindspurger-1.21.x-neoforge-1.3.4.jar",
+    "No mod metadata found in kotlinforforge-5.10.0-all.jar",
+    "No mod metadata found in kubejstweaks-0.0.9-beta.jar",
+    "No mod metadata found in laserio-1.9.11.jar",
+    "No mod metadata found in LegendaryTooltips-1.21.1-neoforge-1.5.5.jar",
+    "No mod metadata found in lionfishapi-2.6.jar",
+    "No mod metadata found in lithostitched-1.5.0+beta4-neoforge-1.21.1.jar",
+    "No mod metadata found in little-big-redstone-1.4.3-beta-1.21.1.jar",
+    "No mod metadata found in livingthings-neoforge-1.21.1-2.3.0.jar",
+    "No mod metadata found in lmft-1.0.4+1.21-neoforge.jar",
+    "No mod metadata found in lootr-neoforge-1.21-1.10.35.91.jar",
+    "No mod metadata found in luminax-1.3.1_neoforge_1.21.1.jar",
+    "No mod metadata found in L_Ender's Cataclysm 1.21.1-3.16.jar",
+    "No mod metadata found in mcw-bridges-3.1.1-mc1.21.1neoforge.jar",
+    "No mod metadata found in mcw-doors-1.1.2-mc1.21.1neoforge.jar",
+    "No mod metadata found in mcw-fences-1.2.0-1.21.1neoforge.jar",
+    "No mod metadata found in mcw-furniture-3.3.0-mc1.21.1neoforge.jar",
+    "No mod metadata found in mcw-lights-1.1.2-mc1.21.1neoforge.jar",
+    "No mod metadata found in mcw-mcwholidays-1.1.1-mc1.21.1neoforge.jar",
+    "No mod metadata found in mcw-paths-1.1.0neoforge-mc1.21.1.jar",
+    "No mod metadata found in mcw-roofs-2.3.2-mc1.21.1neoforge.jar",
+    "No mod metadata found in mcw-stairs-1.0.1-1.21.1neoforge.jar",
+    "No mod metadata found in mcw-trapdoors-1.1.4-mc1.21.1neoforge.jar",
+    "No mod metadata found in mcw-windows-2.4.0-1.21.1neoforge.jar",
+    "No mod metadata found in megacells-4.10.1.jar",
+    "No mod metadata found in mekanismcovers-1.3-BETA+1.21.jar",
+    "No mod metadata found in mekanisticrouters-1.1.1.jar",
+    "No mod metadata found in mekmm-1.21.1-1.0.4.1.jar",
+    "No mod metadata found in memorysettings-1.21-5.9.jar",
+    "No mod metadata found in merequester-neoforge-1.21.1-1.4.1.jar",
+    "No mod metadata found in merrymaking-1.21.1-10.jar",
+    "No mod metadata found in mes-1.4.6-1.21.jar",
+    "No mod metadata found in mininggadgets-1.18.6.jar",
+    "No mod metadata found in mns-1.0.8-1.21.jar",
+    "No mod metadata found in modelfix-1.21-1.10.jar",
+    "No mod metadata found in Modern-Dynamics-0.9.6.jar",
+    "No mod metadata found in Modern-Industrialization-2.3.11.jar",
+    "No mod metadata found in modular_machinery_reborn-1.21.1-2.3.2.jar",
+    "No mod metadata found in modular_machinery_reborn_ars-1.21.1-2.0.3.jar",
+    "No mod metadata found in modular_machinery_reborn_mekanism-1.21.1-2.0.6.jar",
+    "No mod metadata found in monocle-0.2.2.ms.jar",
+    "No mod metadata found in moonlight-1.21-2.23.8-neoforge.jar",
+    "No mod metadata found in moredragoneggs-5.0.jar",
+    "No mod metadata found in moreoverlays-1.24.2-mc1.21.1-neoforge.jar",
+    "No mod metadata found in MoreRed-CCT-Compat-1.21.1-1.3.0.jar",
+    "No mod metadata found in mostructures-neoforge-1.6.0+1.21.1.jar",
+    "No mod metadata found in MouseTweaks-neoforge-mc1.21-2.26.1.jar",
+    "No mod metadata found in mss-1.3.5-1.21.jar",
+    "No mod metadata found in mvs-4.3.0-1.21.jar",
+    "No mod metadata found in MysticalAgradditions-1.21.1-8.0.9.jar",
+    "No mod metadata found in MysticalAgriculture-1.21.1-8.0.19.jar",
+    "No mod metadata found in MysticalCustomization-1.21.1-6.0.0.jar",
+    "No mod metadata found in MythsAndLegends-neoforge-1.7.2-Hotfix.jar",
+    "No mod metadata found in NaturesAura-41.9.jar",
+    "No mod metadata found in NaturesCompass-1.21.1-3.0.3-neoforge.jar",
+    "No mod metadata found in novillagerdm-1.21.1-6.0.0.jar",
+    "No mod metadata found in observable-5.4.4.jar",
+    "No mod metadata found in OctoLib-NEOFORGE-0.5.0.1.jar",
+    "No mod metadata found in Oh-The-Biomes-Weve-Gone-NeoForge-2.4.7.jar",
+    "No mod metadata found in Oh-The-Trees-Youll-Grow-neoforge-1.21.1-5.0.14.jar",
+    "No mod metadata found in omegaconfig-neoforge-1.5.1.jar",
+    "No mod metadata found in oracle_index-neoforge-0.4.1.jar",
+    "No mod metadata found in oritech-neoforge-0.17.3.jar",
+    "No mod metadata found in owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar",
+    "No mod metadata found in pamhc2crops-NEOFORGE-1.21.1-1.0.0.jar",
+    "No mod metadata found in pamhc2foodcore-NEOFORGE-1.21.1-1.0.4.jar",
+    "No mod metadata found in pamhc2foodextended-NEOFORGE-1.21.1-1.0.0.jar",
+    "No mod metadata found in pamhc2trees-NEOFORGE-1.21.1-1.0.4.jar",
+    "No mod metadata found in player-animation-lib-forge-2.0.1+1.21.1.jar",
+    "No mod metadata found in playerxp-neoforge-1.0.2+1.21.1.jar",
+    "No mod metadata found in pneumaticcraft-repressurized-8.2.13+mc1.21.1.jar",
+    "No mod metadata found in polyeng-0.4.1.jar",
+    "No mod metadata found in ponderjs-neoforge-1.21.1-2.1.3.jar",
+    "No mod metadata found in Powah-6.2.6.jar",
+    "No mod metadata found in Prism-1.21.1-neoforge-1.0.11.jar",
+    "No mod metadata found in productivebees-1.21.1-13.10.0.jar",
+    "No mod metadata found in productivemetalworks-1.21.1-1.11.0.jar",
+    "No mod metadata found in productivetrees-1.21.1-0.7.1.jar",
+    "No mod metadata found in Rainbows-1.21-1.5.jar",
+    "No mod metadata found in rangedpumps-1.3.0.jar",
+    "No mod metadata found in rctapi-neoforge-1.21.1-0.13.8-beta.jar",
+    "No mod metadata found in rctmod-neoforge-1.21.1-0.16.8-beta.jar",
+    "No mod metadata found in rebind_narrator-1.21.1-neoforge-2025.09.11.jar",
+    "No mod metadata found in rechiseled-1.1.6a-neoforge-mc1.21.jar",
+    "No mod metadata found in rechiseledcreate-1.0.2a-neoforge-mc1.21.jar",
+    "No mod metadata found in rechiseled_chipped-1.3-1.21.1.jar",
+    "No mod metadata found in redstonepen-1.21-neoforge-1.11.42.jar",
+    "No mod metadata found in refined-types-1.21.1-0.1.3.jar",
+    "No mod metadata found in refinedstorage-curios-integration-1.0.0.jar",
+    "No mod metadata found in refinedstorage-jei-integration-neoforge-1.0.0.jar",
+    "No mod metadata found in refinedstorage-mekanism-integration-1.0.0.jar",
+    "No mod metadata found in refinedstorage-neoforge-2.0.0-beta.13.jar",
+    "No mod metadata found in refinedstorage-quartz-arsenal-neoforge-1.0.6.jar",
+    "No mod metadata found in repurposed_structures-7.5.17+1.21.1-neoforge.jar",
+    "No mod metadata found in resourcefulconfig-neoforge-1.21-3.0.11.jar",
+    "No mod metadata found in resourcefullib-neoforge-1.21-3.0.12.jar",
+    "No mod metadata found in SafePastures-1.1.0+1.21.1.jar",
+    "No mod metadata found in sawmill-1.21-1.7.0-neoforge.jar",
+    "No mod metadata found in sgearmetalworks-1.21.1-1.4.4.jar",
+    "No mod metadata found in shiny-1.21.1-1.2.4.jar",
+    "No mod metadata found in shrink-2.0.1.47-neoforge.jar",
+    "No mod metadata found in silent-gear-1.21.1-neoforge-4.0.28.1.jar",
+    "No mod metadata found in silent-lib-1.21.1-neoforge-10.5.1.jar",
+    "No mod metadata found in silentgems-1.21.1-neoforge-5.1.2.1.jar",
+    "No mod metadata found in simplemagnets-1.1.12c-neoforge-mc1.21.jar",
+    "No mod metadata found in SimpleTMs-neoforge-2.1.2.jar",
+    "No mod metadata found in simple_weather-1.0.13.jar",
+    "No mod metadata found in smithingtemplateviewer-1.0.3.jar",
+    "No mod metadata found in soulplied_energistics-1.0.2.jar",
+    "No mod metadata found in spark-1.10.124-neoforge.jar",
+    "No mod metadata found in stevescarts-1.21-1.2.16-neoforge.jar",
+    "No mod metadata found in storagedelight-25.06.24-1.21-neoforge.jar",
+    "No mod metadata found in Super Factory Manager (SFM)-MC1.21.1-4.25.0.jar",
+    "No mod metadata found in supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
+    "No mod metadata found in supermartijn642corelib-1.1.18a-neoforge-mc1.21.jar",
+    "No mod metadata found in supplementaries-1.21-3.4.16-neoforge.jar",
+    "No mod metadata found in sushigocrafting-1.21-0.6.5.jar",
+    "No mod metadata found in sussysniffers-1.21.1-0.1.3.jar",
+    "No mod metadata found in tempad-1.21.1-3.0.4-all.jar",
+    "No mod metadata found in tesseract-api-neoforge-1.8.29-1.21.1.jar",
+    "No mod metadata found in the_bumblezone-7.11.0+1.21.1-neoforge.jar",
+    "No mod metadata found in timcore-neoforge-1.6.1-1.9.2.jar",
+    "No mod metadata found in tombstone-neoforge-1.21.1-9.4.8.jar",
+    "No mod metadata found in Tomtaru's Cobblemon  Farmer's Delight Tweaks - 1.21.1 - R.1.3.jar",
+    "No mod metadata found in transfer_labels-0.1.6.jar",
+    "No mod metadata found in trashcans-1.0.18c-neoforge-mc1.21.jar",
+    "No mod metadata found in treetap-1.21.1-0.4.5.jar",
+    "No mod metadata found in trophymanager-1.21.1-2.2.9.jar",
+    "No mod metadata found in universalgrid-neoforge-1.21.1-0.2.3.jar",
+    "No mod metadata found in uranus-2.3.1-1.21.1-neoforge.jar",
+    "No mod metadata found in utilitarian-1.21.1-0.16.1.jar",
+    "No mod metadata found in utilityvest-1.0.2_neoforge_1.21.1.jar",
+    "No mod metadata found in valhelsia_core-neoforge-1.21.1-1.1.5.jar",
+    "No mod metadata found in variantsandventures-neoforge-1.0.18+mc1.21.1.jar",
+    "No mod metadata found in villagesandpillages-neoforge-mc1.21.1-1.0.3.jar",
+    "No mod metadata found in wirelesschargers-1.0.9a-neoforge-mc1.21.jar",
+    "No mod metadata found in wits-1.3.0+1.21-neoforge.jar",
+    "No mod metadata found in xtonesreworked-1.1.0-NF-1.21_21.0.167.jar",
+    "No mod metadata found in xycraft_core-0.7.53-all.jar",
+    "No mod metadata found in xycraft_machines-0.7.53.jar",
+    "No mod metadata found in xycraft_override-0.7.53.jar",
+    "No mod metadata found in xycraft_world-0.7.53.jar",
+    "No mod metadata found in yeetusexperimentus-neoforge-87.0.0.jar"
+  ]
+}
