@@ -2,6 +2,8 @@
 
 Interactive CLI + TUI tool to scan a folder of Minecraft mod JARs (Fabric, Forge, NeoForge, Quilt, Legacy Forge) and export a structured modlist (JSON/CSV/Markdown/YAML). Includes a Textual-based TUI, dependency display, and a one-file Windows build.
 
+> Scan fast. Export clean. No more hand-editing mod lists.
+
 ## Features
 
 - Detects loaders: Fabric, Forge, NeoForge, Quilt, Legacy Forge
@@ -41,6 +43,18 @@ Common flags:
 - `--include-disabled` include `.jar.disabled` files (marked disabled in output)
 - `--compact` compact JSON output
 
+CLI in 3 steps:
+
+1. Point to your mods folder (`<mods_folder>`)
+2. Pick an output (`-o modlist.json` and `--format json|csv|markdown|yaml`)
+3. Tune filters/flags as needed (recursive, exclude, compact, duplicates)
+
+Common CLI recipes:
+
+- Clean JSON list: `python main.py .\mods -o modlist.json --compact`
+- CSV for spreadsheets: `python main.py .\mods -o modlist.csv -f csv`
+- Markdown for sharing: `python main.py .\mods -f markdown --exclude-unknown --no-duplicates`
+
 ### Run the TUI
 
 ```powershell
@@ -53,6 +67,43 @@ TUI highlights:
 - Settings panel (format, options, workers)
 - Results table + collapsible mod detail panel (dependencies, meta)
 - Rich log with styled messages
+
+TUI quick flow:
+
+1. Browse to your mods folder (drive picker + Go Up)
+2. Adjust format/options/workers
+3. Press **Scan Mods**, then open the mod detail collapsible to view dependencies
+
+Friendly tips:
+
+- Press `b` to browse, `s` to scan, `e` to export, `q` to quit.
+- Click a row to expand the collapsible panel and see dependencies, author, MC versions.
+- Toggle dark mode with `d` if your terminal prefers it.
+
+### Quick Picks
+
+- Need a fast JSON list? `python main.py .\mods -o modlist.json --compact`
+- Want to browse interactively? `python tui.py` then hit **Scan Mods**
+- Prefer one-file exe? Build once, then run `dist\modlist-generator.exe`
+
+### Sample Output (JSON)
+
+```json
+[
+  {
+    "name": "Example Mod",
+    "loader": "forge",
+    "version": "1.2.3",
+    "mod_id": "examplemod",
+    "filename": "examplemod-1.2.3.jar",
+    "author": "Mod Author",
+    "description": "Adds handy tools and tweaks",
+    "mc_versions": ["1.20.1"],
+    "dependencies": ["forge", "anotherlib"],
+    "disabled": false
+  }
+]
+```
 
 ## Build a single executable (Windows)
 
