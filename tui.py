@@ -33,7 +33,7 @@ from textual.widgets import (
 from textual.screen import ModalScreen
 
 from src import __version__
-from src.scanner import ModScanner
+from src.scanner import ModScanner, ProgressUpdate
 from src.models import ScanResult, ModInfo
 from src.formatters import FORMATTERS, get_formatter
 
@@ -495,11 +495,14 @@ class ModlistGeneratorApp(App):
         self.call_from_thread(log.write, f"Starting scan of [cyan]{self.input_folder}[/]...")
         
         try:
-            scanner = ModScanner(workers=workers)
+            scanner = ModScanner(workers=workers, progress_batch_size=10, progress_batch_interval=0.1)
             
-            def progress_callback(current: int, total: int, filename: str):
-                progress = current / total if total > 0 else 0
-                self.call_from_thread(self._update_status, f"Processing: {filename[:30]}...", progress)
+            def progress_callback(update: ProgressUpdate) -> None:
+                self.call_from_thread(
+                    self._update_status, 
+                    f"Processing: {update.filename[:30]}...", 
+                    update.current / update.total
+                )
             
             result = scanner.scan_folder(
                 self.input_folder,

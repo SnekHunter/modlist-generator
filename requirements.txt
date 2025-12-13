@@ -1,8 +1,14 @@
 # Required for Python < 3.11 (built-in tomllib available in 3.11+)
 tomli>=1.2.0; python_version<"3.11"
 
+# TOML writing support (for config file saving)
+tomli-w>=1.0.0
+
 # Optional dependencies for enhanced experience
 rich>=13.0.0  # Progress bars, colored output, tables
+
+# Platform-specific directories (for config/cache locations)
+platformdirs>=4.0.0
 
 # Optional: YAML output format support
 pyyaml>=6.0

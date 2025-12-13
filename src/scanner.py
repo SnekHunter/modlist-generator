@@ -6,43 +6,97 @@ import zipfile
 import logging
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from dataclasses import replace, dataclass
 from pathlib import Path
 from datetime import datetime
-from typing import List, Optional, Tuple
+from typing import List, Optional, Tuple, Protocol, Any
 
 from .models import ModInfo, ScanResult
 from .extractors import ALL_EXTRACTORS
+from .cache import ScanCache
+from . import security
 
 logger = logging.getLogger(__name__)
+
+
+@dataclass
+class ProgressUpdate:
+    """Progress update information."""
+    current: int
+    total: int
+    filename: str
+    percent: float
+    
+    def __post_init__(self) -> None:
+        """Calculate percentage after initialization."""
+        if self.total > 0:
+            object.__setattr__(self, 'percent', (self.current / self.total) * 100)
+        else:
+            object.__setattr__(self, 'percent', 0.0)
+
+
+class ProgressCallback(Protocol):
+    """Protocol for progress callback functions."""
+    def __call__(self, update: ProgressUpdate) -> None:
+        """Called with progress updates.
+        
+        Args:
+            update: ProgressUpdate with scan progress information
+        """
+        ...
 
 
 class ModScanner:
     """Scanner for extracting mod information from JAR files."""
     
-    def __init__(self, workers: int = 4, extractors: Optional[List] = None):
+    def __init__(
+        self,
+        workers: int = 4,
+        extractors: Optional[List[Any]] = None,
+        cache: Optional[ScanCache] = None,
+        use_cache: bool = False,
+        progress_batch_size: int = 10,
+        progress_batch_interval: float = 0.1
+    ) -> None:
         """
         Initialize the scanner.
         
         Args:
             workers: Number of parallel workers for processing
             extractors: List of extractors to use (defaults to all)
+            cache: Cache instance to use (optional)
+            use_cache: Whether to use caching
+            progress_batch_size: Update progress every N files
+            progress_batch_interval: Update progress every N seconds (whichever comes first)
         """
         self.workers = workers
         self.extractors = extractors or ALL_EXTRACTORS
         # Sort by priority
         self.extractors = sorted(self.extractors, key=lambda e: e.priority)
+        self.cache = cache
+        self.use_cache = use_cache and cache is not None
+        self.progress_batch_size = max(1, progress_batch_size)
+        self.progress_batch_interval = max(0.01, progress_batch_interval)
     
     def _extract_single_mod(self, jar_path: Path, disabled: bool = False) -> Tuple[Optional[ModInfo], Optional[str]]:
-        """
-        Extract mod info from a single JAR file.
+        # Try cache first
+        if self.use_cache and self.cache:
+            cached = self.cache.get(jar_path)
+            if cached:
+                logger.debug(f"Cache hit: {jar_path.name}")
+                # Apply disabled flag if needed
+                if disabled and not cached.disabled:
+                    cached = replace(cached, disabled=True)
+                return (cached, None)
         
-        Args:
-            jar_path: Path to the JAR file
-            disabled: Whether this is a .jar.disabled file
+        # Validate JAR file for security
+        is_valid, security_error = security.validate_jar_file(jar_path)
+        if not is_valid:
+            error_msg = f"Security validation failed: {security_error}"
+            logger.warning(f"{jar_path.name}: {error_msg}")
+            return (None, error_msg)
         
-        Returns:
-            Tuple of (ModInfo or None, error message or None)
-        """
+        # Extract normally
         try:
             with zipfile.ZipFile(jar_path, 'r') as jar:
                 files = jar.namelist()
@@ -51,40 +105,28 @@ class ModScanner:
                 for extractor in self.extractors:
                     if extractor.can_extract(jar, files):
                         logger.debug(f"Using {extractor.name} extractor for {jar_path.name}")
-                        mod_info = extractor.extract(jar, jar_path, files)
+                        mod_info, error = extractor.extract(jar, jar_path, files)
                         if mod_info:
                             # Add disabled flag if needed
                             if disabled:
-                                mod_info = ModInfo(
-                                    name=mod_info.name,
-                                    loader=mod_info.loader,
-                                    version=mod_info.version,
-                                    filename=mod_info.filename,
-                                    mod_id=mod_info.mod_id,
-                                    dependencies=mod_info.dependencies,
-                                    author=mod_info.author,
-                                    description=mod_info.description,
-                                    mc_versions=mod_info.mc_versions,
-                                    disabled=True
-                                )
-                            return (mod_info, None)
+                                mod_info = replace(mod_info, disabled=True)
+                            
+                            # Cache the result if extraction succeeded
+                            if self.use_cache and self.cache:
+                                self.cache.set(jar_path, mod_info)
+                            
+                            return (mod_info, error)
                 
                 # Fallback: try alternative extraction methods
                 mod_info = self._fallback_extraction(jar, jar_path, files)
                 if mod_info:
                     if disabled:
-                        mod_info = ModInfo(
-                            name=mod_info.name,
-                            loader=mod_info.loader,
-                            version=mod_info.version,
-                            filename=mod_info.filename,
-                            mod_id=mod_info.mod_id,
-                            dependencies=mod_info.dependencies,
-                            author=mod_info.author,
-                            description=mod_info.description,
-                            mc_versions=mod_info.mc_versions,
-                            disabled=True
-                        )
+                        mod_info = replace(mod_info, disabled=True)
+                    
+                    # Cache the result if extraction succeeded
+                    if self.use_cache and self.cache and mod_info:
+                        self.cache.set(jar_path, mod_info)
+                    
                     return (mod_info, None)
                 
                 # No metadata found - create basic info from filename
@@ -103,6 +145,10 @@ class ModScanner:
         except zipfile.BadZipFile:
             error = f"Invalid or corrupted JAR file: {jar_path.name}"
             logger.error(error)
+            return (None, error)
+        except security.SecurityError as e:
+            error = f"Security error: {str(e)}"
+            logger.error(f"{jar_path.name}: {error}")
             return (None, error)
         except Exception as e:
             error = f"Failed to process {jar_path.name}: {str(e)}"
@@ -166,7 +212,7 @@ class ModScanner:
         recursive: bool = False,
         exclude_patterns: Optional[List[str]] = None,
         include_disabled: bool = False,
-        progress_callback=None
+        progress_callback: Optional[ProgressCallback] = None
     ) -> ScanResult:
         """
         Scan a folder for mod JAR files.
@@ -176,11 +222,18 @@ class ModScanner:
             recursive: Whether to scan subdirectories
             exclude_patterns: List of glob patterns to exclude
             include_disabled: Whether to include .jar.disabled files
-            progress_callback: Optional callback for progress updates (current, total, filename)
+            progress_callback: Optional callback for progress updates
         
         Returns:
             ScanResult containing all extracted mod information
         """
+        # Validate folder path for security
+        try:
+            folder_path = security.validate_folder_path(folder_path)
+        except (ValueError, security.PathTraversalError) as e:
+            logger.error(f"Invalid folder path: {e}")
+            return ScanResult(total_files=0, errors=[str(e)])
+        
         if not folder_path.exists():
             raise FileNotFoundError(f"Folder not found: {folder_path}")
         
@@ -216,8 +269,12 @@ class ModScanner:
         result = ScanResult(total_files=len(all_files))
         start_time = time.time()
         
-        # Process files in parallel
+        # Process files in parallel with batched progress updates
         completed = 0
+        last_progress_time = time.time()
+        last_progress_count = 0
+        current_filename = ""
+        
         with ThreadPoolExecutor(max_workers=self.workers) as executor:
             future_to_jar = {
                 executor.submit(
@@ -231,9 +288,27 @@ class ModScanner:
             for future in as_completed(future_to_jar):
                 jar_path = future_to_jar[future]
                 completed += 1
+                current_filename = jar_path.name
                 
-                if progress_callback:
-                    progress_callback(completed, len(all_files), jar_path.name)
+                # Batched progress updates - only call callback if:
+                # 1. Enough files processed since last update (batch_size), OR
+                # 2. Enough time elapsed since last update (batch_interval), OR
+                # 3. This is the last file
+                should_update = (
+                    (completed - last_progress_count) >= self.progress_batch_size or
+                    (time.time() - last_progress_time) >= self.progress_batch_interval or
+                    completed == len(all_files)
+                )
+                
+                if progress_callback and should_update:
+                    update = ProgressUpdate(
+                        current=completed,
+                        total=len(all_files),
+                        filename=current_filename
+                    )
+                    progress_callback(update)
+                    last_progress_time = time.time()
+                    last_progress_count = completed
                 
                 try:
                     mod_info, error = future.result()

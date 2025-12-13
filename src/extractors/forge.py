@@ -9,8 +9,7 @@ from pathlib import Path
 from typing import Optional, List, Tuple
 
 from .base import BaseExtractor
-from ..models import ModInfo
-
+from ..models import ModInfofrom .. import security
 logger = logging.getLogger(__name__)
 
 # Try to import tomllib (Python 3.11+), fallback to tomli
@@ -139,21 +138,26 @@ class ForgeTomlExtractor(BaseExtractor):
         
         return []
     
-    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Optional[ModInfo]:
+    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Tuple[Optional[ModInfo], Optional[str]]:
         toml_file = self._find_toml_file(files)
         if not toml_file:
-            return None
+            return (None, "No TOML metadata file found")
         
         try:
-            with jar.open(toml_file) as f:
-                content = self._safe_decode(f.read())
-                data = tomllib.loads(content)
+            # Safely extract with 1MB size limit for metadata files
+            content_bytes = security.safe_extract_file(jar, toml_file, max_size=1024*1024)
+            if content_bytes is None:
+                return (None, f"Failed to safely extract {toml_file}")
+            
+            content = self._safe_decode(content_bytes)
+            data = tomllib.loads(content)
                 
                 # Get the first mod entry
                 mods = data.get('mods', [])
                 if not mods:
-                    logger.warning(f"No mods array found in {toml_file} for {jar_path.name}")
-                    return None
+                    error = f"No mods array found in {toml_file} for {jar_path.name}"
+                    logger.warning(error)
+                    return (None, error)
                 
                 mod = mods[0]
                 mod_id = mod.get('modId', '')
@@ -189,7 +193,7 @@ class ForgeTomlExtractor(BaseExtractor):
                 mc_versions = self._extract_mc_versions_from_toml(data, mod_id)
                 
                 logger.debug(f"Extracted {loader.capitalize()} mod: {name} v{version}")
-                return ModInfo(
+                return (ModInfo(
                     name=name,
                     loader=loader,
                     version=version,
@@ -199,12 +203,12 @@ class ForgeTomlExtractor(BaseExtractor):
                     author=author,
                     description=description,
                     mc_versions=mc_versions
-                )
+                ), None)
                 
         except Exception as e:
-            logger.error(f"Error extracting Forge/NeoForge mod info from {jar_path.name}: {e}")
-        
-        return None
+            error = f"Error extracting Forge/NeoForge mod info from {jar_path.name}: {e}"
+            logger.error(error)
+            return (None, error)
     
     def _get_version_from_manifest(self, jar: zipfile.ZipFile, files: List[str]) -> Optional[str]:
         """Try to extract version from JAR manifest."""
@@ -212,14 +216,18 @@ class ForgeTomlExtractor(BaseExtractor):
             return None
         
         try:
-            with jar.open('META-INF/MANIFEST.MF') as f:
-                content = self._safe_decode(f.read())
-                for line in content.split('\n'):
-                    line = line.strip()
-                    if ':' in line:
-                        key, value = line.split(':', 1)
-                        if key.strip() == 'Implementation-Version':
-                            return value.strip()
+            # Safely extract manifest
+            content_bytes = security.safe_extract_file(jar, 'META-INF/MANIFEST.MF', max_size=1024*1024)
+            if content_bytes is None:
+                return None
+            
+            content = self._safe_decode(content_bytes)
+            for line in content.split('\n'):
+                line = line.strip()
+                if ':' in line:
+                    key, value = line.split(':', 1)
+                    if key.strip() == 'Implementation-Version':
+                        return value.strip()
         except Exception:
             pass
         
@@ -242,11 +250,15 @@ class LegacyForgeExtractor(BaseExtractor):
     def can_extract(self, jar: zipfile.ZipFile, files: List[str]) -> bool:
         return self.METADATA_FILE in files
     
-    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Optional[ModInfo]:
+    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Tuple[Optional[ModInfo], Optional[str]]:
         try:
-            with jar.open(self.METADATA_FILE) as f:
-                content = self._safe_decode(f.read())
-                data = json.loads(content)
+            # Safely extract mcmod.info with 1MB size limit
+            content_bytes = security.safe_extract_file(jar, self.METADATA_FILE, max_size=1024*1024)
+            if content_bytes is None:
+                return (None, f"Failed to safely extract {self.METADATA_FILE}")
+            
+            content = self._safe_decode(content_bytes)
+            data = json.loads(content)
                 
                 # mcmod.info can be an array or object
                 if isinstance(data, list) and data:
@@ -258,8 +270,9 @@ class LegacyForgeExtractor(BaseExtractor):
                     else:
                         mod = data
                 else:
-                    logger.warning(f"Invalid mcmod.info format in {jar_path.name}")
-                    return None
+                    error = f"Invalid mcmod.info format in {jar_path.name}"
+                    logger.warning(error)
+                    return (None, error)
                 
                 mod_id = mod.get('modid', '')
                 name = mod.get('name', mod.get('modid', jar_path.stem))
@@ -288,7 +301,7 @@ class LegacyForgeExtractor(BaseExtractor):
                     mc_versions = self._parse_mc_versions(mc_version)
                 
                 logger.debug(f"Extracted Legacy Forge mod: {name} v{version}")
-                return ModInfo(
+                return (ModInfo(
                     name=name,
                     loader='forge',
                     version=version,
@@ -298,11 +311,13 @@ class LegacyForgeExtractor(BaseExtractor):
                     author=author,
                     description=description,
                     mc_versions=mc_versions
-                )
+                ), None)
                 
         except json.JSONDecodeError as e:
-            logger.warning(f"Invalid JSON in {self.METADATA_FILE} for {jar_path.name}: {e}")
+            error = f"Invalid JSON in {self.METADATA_FILE} for {jar_path.name}: {e}"
+            logger.warning(error)
+            return (None, error)
         except Exception as e:
-            logger.error(f"Error extracting Legacy Forge mod info from {jar_path.name}: {e}")
-        
-        return None
+            error = f"Error extracting Legacy Forge mod info from {jar_path.name}: {e}"
+            logger.error(error)
+            return (None, error)

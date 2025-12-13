@@ -7,7 +7,7 @@ import zipfile
 import logging
 from abc import ABC, abstractmethod
 from pathlib import Path
-from typing import Optional, List
+from typing import Optional, List, Tuple, Union, Dict, Any
 
 from ..models import ModInfo
 
@@ -49,8 +49,12 @@ class BaseExtractor(ABC):
         pass
     
     @abstractmethod
-    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Optional[ModInfo]:
-        """Extract mod information from the JAR file."""
+    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Tuple[Optional[ModInfo], Optional[str]]:
+        """Extract mod information from the JAR file.
+        
+        Returns:
+            Tuple of (ModInfo or None, error message or None)
+        """
         pass
     
     def _safe_decode(self, content: bytes, encoding: str = 'utf-8') -> str:
@@ -78,7 +82,7 @@ class BaseExtractor(ABC):
                                 dependencies.append(dep_id)
         return dependencies
     
-    def _normalize_authors(self, authors) -> Optional[str]:
+    def _normalize_authors(self, authors: Union[str, List[Union[str, Dict[str, Any]]], None]) -> Optional[str]:
         """
         Normalize authors to a comma-separated string.
         
@@ -108,7 +112,7 @@ class BaseExtractor(ABC):
         
         return None
     
-    def _parse_mc_versions(self, version_constraint) -> List[str]:
+    def _parse_mc_versions(self, version_constraint: Union[str, List[str], None]) -> List[str]:
         """
         Parse Minecraft version constraint into list of versions.
         
@@ -145,4 +149,3 @@ class BaseExtractor(ABC):
                         versions.add(version)
         
         return sorted(versions)
-        return dependencies

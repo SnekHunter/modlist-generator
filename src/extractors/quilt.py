@@ -6,10 +6,11 @@ import json
 import zipfile
 import logging
 from pathlib import Path
-from typing import Optional, List
+from typing import Optional, List, Tuple
 
 from .base import BaseExtractor
 from ..models import ModInfo
+from .. import security
 
 logger = logging.getLogger(__name__)
 
@@ -30,11 +31,15 @@ class QuiltExtractor(BaseExtractor):
     def can_extract(self, jar: zipfile.ZipFile, files: List[str]) -> bool:
         return self.METADATA_FILE in files
     
-    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Optional[ModInfo]:
+    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Tuple[Optional[ModInfo], Optional[str]]:
         try:
-            with jar.open(self.METADATA_FILE) as f:
-                content = self._safe_decode(f.read())
-                data = json.loads(content)
+            # Safely extract with 1MB size limit for metadata files
+            content_bytes = security.safe_extract_file(jar, self.METADATA_FILE, max_size=1024*1024)
+            if content_bytes is None:
+                return (None, f"Failed to safely extract {self.METADATA_FILE}")
+            
+            content = self._safe_decode(content_bytes)
+            data = json.loads(content)
                 
                 # Quilt uses a nested structure under 'quilt_loader'
                 quilt_loader = data.get('quilt_loader', {})
@@ -82,7 +87,7 @@ class QuiltExtractor(BaseExtractor):
                     description = None
                 
                 logger.debug(f"Extracted Quilt mod: {name} v{version}")
-                return ModInfo(
+                return (ModInfo(
                     name=name,
                     loader='quilt',
                     version=version,
@@ -92,11 +97,13 @@ class QuiltExtractor(BaseExtractor):
                     author=author,
                     description=description,
                     mc_versions=mc_versions
-                )
+                ), None)
                 
         except json.JSONDecodeError as e:
-            logger.warning(f"Invalid JSON in {self.METADATA_FILE} for {jar_path.name}: {e}")
+            error = f"Invalid JSON in {self.METADATA_FILE} for {jar_path.name}: {e}"
+            logger.warning(error)
+            return (None, error)
         except Exception as e:
-            logger.error(f"Error extracting Quilt mod info from {jar_path.name}: {e}")
-        
-        return None
+            error = f"Error extracting Quilt mod info from {jar_path.name}: {e}"
+            logger.error(error)
+            return (None, error)

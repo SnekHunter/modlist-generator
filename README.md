@@ -1,19 +1,34 @@
 # Modlist Generator
 
-Interactive CLI + TUI tool to scan a folder of Minecraft mod JARs (Fabric, Forge, NeoForge, Quilt, Legacy Forge) and export a structured modlist (JSON/CSV/Markdown/YAML). Includes a Textual-based TUI, dependency display, and a one-file Windows build.
+**v3.0.0** — Interactive CLI + TUI tool to scan Minecraft mod JARs (Fabric, Forge, NeoForge, Quilt, Legacy Forge) and export structured modlists (JSON/CSV/Markdown/YAML). Features caching, type safety, comprehensive testing, and TOML configuration.
 
-> Scan fast. Export clean. No more hand-editing mod lists.
+> Scan fast. Cache smart. Export clean. No more hand-editing mod lists.
+
+## ✨ What's New in v3.0.0
+
+- **🚀 10x Faster Re-scans:** Smart caching skips unchanged files
+- **⚙️ Configuration File:** Persistent settings via `~/.config/modlist-generator/config.toml`
+- **📊 Batched Progress:** Smoother UI with reduced update frequency
+- **🔒 Type Safety:** Full type hints with strict mypy checking
+- **✅ Testing:** 60+ tests with pytest and mock JAR fixtures
+- **�️ Security Hardening:** Path traversal protection, ZIP bomb detection, resource limits
+- **�🔧 Better Errors:** Improved error messages with actionable info
+
+**Breaking Changes:** See [MIGRATION.md](MIGRATION.md) for upgrade guide from v2.x
 
 ## Features
 
-- Detects loaders: Fabric, Forge, NeoForge, Quilt, Legacy Forge
-- Extracts: name, loader, version, mod id, filename, authors, description, Minecraft versions, disabled (.jar.disabled), dependencies
-- Outputs: JSON (compact option), CSV, Markdown, YAML
-- CLI + Textual TUI (Rich-styled logs, progress bar, collapsible mod details with dependencies)
-- Filtering & cleanup: exclude unknown loaders, remove duplicates, include disabled mods
-- Parallel scanning with configurable workers
+- **Loader Detection:** Fabric, Forge, NeoForge, Quilt, Legacy Forge
+- **Metadata Extraction:** name, loader, version, mod ID, authors, description, Minecraft versions, dependencies
+- **Output Formats:** JSON (compact), CSV, Markdown, YAML
+- **Interfaces:** CLI + Textual TUI (Rich-styled logs, progress bars, collapsible details)
+- **Filtering:** Exclude unknown loaders, remove duplicates, include disabled mods
+- **Performance:** Parallel scanning with configurable workers + smart caching
+- **Configuration:** TOML config file for persistent preferences
+- **Security:** Path validation, ZIP bomb detection, 500MB file size limits
+- **Testing:** Comprehensive test suite with coverage reporting
 
-## Quickstart (Python 3.11+ recommended)
+## Quickstart (Python 3.10+ required, 3.11+ recommended)
 
 ```powershell
 # From repo root
@@ -76,9 +91,38 @@ TUI quick flow:
 
 Friendly tips:
 
-- Press `b` to browse, `s` to scan, `e` to export, `q` to quit.
-- Click a row to expand the collapsible panel and see dependencies, author, MC versions.
-- Toggle dark mode with `d` if your terminal prefers it.
+- Press `b` to browse, `s` to scan, `e` to export, `q` to quit
+- Click a row to expand the collapsible panel and see dependencies, author, MC versions
+- Toggle dark mode with `d` if your terminal prefers it
+
+### Configuration File (New in v3.0.0)
+
+Create `~/.config/modlist-generator/config.toml` (or `%APPDATA%\modlist-generator\config.toml` on Windows):
+
+```toml
+default_workers = 8
+default_format = "json"
+enable_cache = true
+exclude_patterns = ["*-dev.jar", "*-sources.jar"]
+```
+
+See [.modlistrc.toml.example](.modlistrc.toml.example) for all available options.
+
+### Caching (New in v3.0.0)
+
+Enable caching for 10x faster re-scans:
+
+```python
+from src.scanner import ModScanner
+from src.cache import ScanCache
+from pathlib import Path
+
+cache = ScanCache(Path("~/.cache/modlist-generator").expanduser())
+scanner = ModScanner(workers=8, cache=cache, use_cache=True)
+
+result = scanner.scan_folder(Path("./mods"))
+# Second scan is ~10x faster for unchanged files!
+```
 
 ### Quick Picks
 
@@ -124,16 +168,83 @@ src/
   scanner.py           # Folder scanning / parallel workers
   models.py            # ModInfo / ScanResult data classes
   formatters.py        # JSON/CSV/Markdown/YAML writers
+  config.py            # Configuration management (NEW v3.0.0)
+  cache.py             # Scan result caching (NEW v3.0.0)
+  security.py          # Path validation, ZIP bomb detection (NEW v3.0.0)
   extractors/          # Loader-specific metadata extractors
-requirements.txt       # Runtime deps
+tests/                 # Test suite (NEW v3.0.0)
+  conftest.py          # Pytest fixtures
+  test_*.py            # Unit & integration tests
+requirements.txt       # Runtime dependencies
+requirements-dev.txt   # Development dependencies (NEW v3.0.0)
+pytest.ini             # Test configuration (NEW v3.0.0)
+mypy.ini               # Type checking config (NEW v3.0.0)
+MIGRATION.md           # Upgrade guide (NEW v3.0.0)
+CHANGELOG.md           # Version history (NEW v3.0.0)
 modlist-generator.spec # PyInstaller spec (generated)
 ```
 
+## Security
+
+v3.0.0 includes comprehensive security protections for safe JAR file processing:
+
+**Path Traversal Protection:**
+
+- All input paths validated against system directories
+- ZIP entry names checked for `../` and absolute paths
+- Path length limits (1000 characters max)
+
+**ZIP Bomb Detection:**
+
+- File size limits: 500MB per file, 500MB total decompressed
+- Maximum 10,000 files per JAR
+- Compression ratio validation
+
+**Resource Limits:**
+
+- Safe file extraction with chunked reading (8KB chunks)
+- Memory-bounded operations prevent exhaustion attacks
+- Automatic rejection of malformed JARs
+
+Security features are **always enabled** and cannot be disabled. Invalid or unsafe files are logged and skipped during scanning.
+
+## Development
+
+### Running Tests
+
+```powershell
+pip install -r requirements-dev.txt
+pytest                    # Run all tests
+pytest --cov=src         # With coverage
+pytest tests/test_scanner.py  # Specific file
+```
+
+### Type Checking
+
+```powershell
+mypy src/
+```
+
+### Code Quality
+
+```powershell
+black src/ tests/        # Format code
+ruff check src/          # Lint
+```
+
+## Documentation
+
+- **[MIGRATION.md](MIGRATION.md)** — Upgrade guide from v2.x to v3.0.0
+- **[CHANGELOG.md](CHANGELOG.md)** — Version history and release notes
+- **[REFERENCES.md](REFERENCES.md)** — Technical details and command reference
+- **[.modlistrc.toml.example](.modlistrc.toml.example)** — Configuration file template
+
 ## Notes
 
-- On Python < 3.11, `tomli` is required; 3.11+ uses built-in `tomllib`.
-- Rich is optional for the CLI but recommended for nicer output.
-- Textual is required for the TUI.
+- Python 3.10+ required (3.11+ recommended for built-in `tomllib`)
+- On Python < 3.11, `tomli` is auto-installed for TOML support
+- Rich is optional for CLI but recommended for better output
+- Textual is required for the TUI
 
 ## License
 

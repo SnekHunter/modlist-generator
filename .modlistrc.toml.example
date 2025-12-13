@@ -1,0 +1,75 @@
+# Modlist Generator Configuration File
+# Save this as ~/.config/modlist-generator/config.toml (Linux/macOS)
+# or %APPDATA%/modlist-generator/config.toml (Windows)
+
+# ===== Scanning Settings =====
+# Number of parallel workers for scanning (1-16)
+default_workers = 4
+
+# Default output format: "json", "csv", "markdown", "yaml"
+default_format = "json"
+
+# Include disabled mods (.jar.disabled files)
+include_disabled = false
+
+# Recursively scan subdirectories
+recursive = false
+
+
+# ===== Output Settings =====
+# Default output directory (optional, uses current directory if not set)
+# default_output_dir = "~/Documents/modlists"
+
+# Use compact JSON formatting (no indentation)
+compact_json = false
+
+# Use detailed markdown formatting (includes descriptions and dependencies)
+detailed_markdown = false
+
+
+# ===== Filtering =====
+# Patterns to exclude from scanning (glob patterns)
+exclude_patterns = [
+    "*-dev.jar",
+    "*-sources.jar",
+    "*.disabled.backup"
+]
+
+# Default loader type filter (optional): "fabric", "forge", "quilt", etc.
+# default_loader_filter = "fabric"
+
+# Exclude mods with unknown loader type
+exclude_unknown = false
+
+
+# ===== Performance =====
+# Maximum number of workers allowed
+max_workers = 16
+
+# Enable scan result caching for faster re-scans
+enable_cache = true
+
+# Cache directory (optional, uses platform default if not set)
+# cache_dir = "~/.cache/modlist-generator"
+
+
+# ===== UI/UX =====
+# Show progress bar during scanning
+show_progress = true
+
+# Use Rich library for enhanced terminal output
+use_rich = true
+
+# Recently scanned folders (auto-managed by application)
+recent_folders = []
+
+# Maximum number of recent folders to remember
+max_recent_folders = 10
+
+
+# ===== Advanced =====
+# Logging level: "DEBUG", "INFO", "WARNING", "ERROR"
+log_level = "INFO"
+
+# Log file path (optional, logs to console if not set)
+# log_file = "~/modlist-generator.log"

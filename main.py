@@ -22,7 +22,7 @@ except ImportError:
     RICH_AVAILABLE = False
 
 from src import __version__
-from src.scanner import ModScanner
+from src.scanner import ModScanner, ProgressUpdate
 from src.models import ScanResult
 from src.formatters import FORMATTERS, get_formatter
 
@@ -124,10 +124,14 @@ def scan_with_progress(scanner: ModScanner, folder_path: Path, recursive: bool, 
         ) as progress:
             task = progress.add_task("[cyan]Scanning mods...", total=None)
             
-            def update_progress(current: int, total: int, filename: str):
-                if progress.tasks[task].total != total:
-                    progress.update(task, total=total)
-                progress.update(task, completed=current, description=f"[cyan]{filename[:40]}...")
+            def update_progress(update: ProgressUpdate) -> None:
+                if progress.tasks[task].total != update.total:
+                    progress.update(task, total=update.total)
+                progress.update(
+                    task,
+                    completed=update.current,
+                    description=f"[cyan]{update.filename[:40]}..."
+                )
             
             result = scanner.scan_folder(
                 folder_path,
@@ -141,8 +145,8 @@ def scan_with_progress(scanner: ModScanner, folder_path: Path, recursive: bool, 
         
         return result
     else:
-        def simple_progress(current: int, total: int, filename: str):
-            print(f"Processing [{current}/{total}]: {filename}")
+        def simple_progress(update: ProgressUpdate) -> None:
+            print(f"Processing [{update.current}/{update.total}]: {update.filename}")
         
         return scanner.scan_folder(
             folder_path,
