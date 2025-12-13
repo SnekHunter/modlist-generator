@@ -5,16 +5,19 @@ A beautiful terminal app for extracting mod details from Minecraft JAR files.
 """
 
 import asyncio
+import json
 import os
 import platform
 import string
 from pathlib import Path
-from typing import Optional
+from threading import Event
+from typing import Optional, List, Tuple, Any
 
 from textual import on, work
 from textual.app import App, ComposeResult
 from textual.binding import Binding
 from textual.containers import Container, Horizontal, Vertical, ScrollableContainer
+from textual.message import Message
 from textual.widgets import (
     Header,
     Footer,
@@ -36,6 +39,8 @@ from src import __version__
 from src.scanner import ModScanner, ProgressUpdate
 from src.models import ScanResult, ModInfo
 from src.formatters import FORMATTERS, get_formatter
+from src.config import load_config
+from src.cache import ScanCache
 
 
 def get_available_drives() -> list[tuple[str, str]]:
@@ -174,6 +179,133 @@ class FolderSelectScreen(ModalScreen[Optional[Path]]):
         self.dismiss(self.selected_path or self.start_path)
 
 
+class ConfirmScreen(ModalScreen[bool]):
+    """Modal confirmation dialog."""
+    
+    BINDINGS = [
+        Binding("escape", "cancel", "Cancel"),
+        Binding("enter", "confirm", "Confirm"),
+    ]
+    
+    CSS = """
+    ConfirmScreen {
+        align: center middle;
+    }
+    
+    ConfirmScreen > Container {
+        width: 60;
+        height: auto;
+        border: thick $warning;
+        background: $surface;
+        padding: 2;
+    }
+    
+    ConfirmScreen #confirm-title {
+        text-style: bold;
+        text-align: center;
+        padding-bottom: 1;
+    }
+    
+    ConfirmScreen .message {
+        text-align: center;
+        padding: 1;
+    }
+    
+    ConfirmScreen .buttons {
+        height: auto;
+        align: center middle;
+        padding-top: 1;
+    }
+    """
+    
+    def __init__(self, message: str, title: str = "Confirm"):
+        super().__init__()
+        self.message_text = message
+        self.title_text = title
+    
+    def compose(self) -> ComposeResult:
+        with Container():
+            yield Label(self.title_text, id="confirm-title")
+            yield Static(self.message_text, classes="message")
+            with Horizontal(classes="buttons"):
+                yield Button("Cancel", variant="default", id="cancel-confirm")
+                yield Button("Confirm", variant="warning", id="do-confirm")
+    
+    @on(Button.Pressed, "#cancel-confirm")
+    def on_cancel(self) -> None:
+        self.dismiss(False)
+    
+    @on(Button.Pressed, "#do-confirm")
+    def on_confirm_btn(self) -> None:
+        self.dismiss(True)
+    
+    def action_cancel(self) -> None:
+        self.dismiss(False)
+    
+    def action_confirm(self) -> None:
+        self.dismiss(True)
+
+
+class SettingsManager:
+    """Manage persistent TUI settings."""
+    
+    def __init__(self):
+        self.config_path = self._get_config_path()
+        self.config_path.parent.mkdir(parents=True, exist_ok=True)
+        self.settings = self._load()
+    
+    def _get_config_path(self) -> Path:
+        """Get platform-appropriate config path."""
+        try:
+            from platformdirs import user_config_dir
+            return Path(user_config_dir("modlist-generator")) / "tui-settings.json"
+        except ImportError:
+            if platform.system() == "Windows":
+                base = Path(os.environ.get("APPDATA", Path.home()))
+            else:
+                base = Path.home() / ".config"
+            return base / "modlist-generator" / "tui-settings.json"
+    
+    def _load(self) -> dict:
+        """Load settings from disk."""
+        if self.config_path.exists():
+            try:
+                with open(self.config_path, "r", encoding="utf-8") as f:
+                    return {**self._defaults(), **json.load(f)}
+            except Exception:
+                pass
+        return self._defaults()
+    
+    def _defaults(self) -> dict:
+        """Default settings."""
+        return {
+            "last_folder": str(Path.cwd()),
+            "format": "json",
+            "recursive": False,
+            "include_disabled": False,
+            "exclude_unknown": False,
+            "no_duplicates": False,
+            "compact": False,
+            "workers": 4,
+            "dark_mode": True,
+        }
+    
+    def save(self) -> None:
+        """Save settings to disk."""
+        try:
+            with open(self.config_path, "w", encoding="utf-8") as f:
+                json.dump(self.settings, f, indent=2)
+        except Exception:
+            pass  # Fail silently
+    
+    def get(self, key: str, default: Any = None) -> Any:
+        return self.settings.get(key, default)
+    
+    def set(self, key: str, value: Any) -> None:
+        self.settings[key] = value
+        self.save()
+
+
 class ModlistGeneratorApp(App):
     """Main TUI Application for Modlist Generator."""
     
@@ -186,7 +318,22 @@ class ModlistGeneratorApp(App):
         Binding("s", "scan", "Scan"),
         Binding("e", "export", "Export"),
         Binding("d", "toggle_dark", "Toggle Dark Mode"),
+        Binding("escape", "cancel_scan", "Cancel Scan"),
+        Binding("/", "focus_search", "Search"),
     ]
+    
+    def __init__(self):
+        super().__init__()
+        self.config = load_config()
+        self.settings_mgr = SettingsManager()
+        self.scan_result: Optional[ScanResult] = None
+        self.input_folder: Path = Path(self.settings_mgr.get("last_folder", str(Path.cwd())))
+        self.is_scanning = False
+        self._cancel_event = Event()
+        self._full_mod_list: List[ModInfo] = []  # Unfiltered list for search
+        self._current_sort_column: Optional[str] = None
+        self._sort_reverse = False
+        self.dark = self.settings_mgr.get("dark_mode", True)
     
     CSS = """
     Screen {
@@ -306,13 +453,37 @@ class ModlistGeneratorApp(App):
         border: solid $warning;
         box-sizing: border-box;
     }
-    """
     
-    def __init__(self):
-        super().__init__()
-        self.scan_result: Optional[ScanResult] = None
-        self.input_folder: Path = Path.cwd()
-        self.is_scanning = False
+    #search-container {
+        height: auto;
+        padding: 0 0 1 0;
+    }
+    
+    #search-input {
+        width: 1fr;
+    }
+    
+    #errors-panel {
+        height: auto;
+        max-height: 10;
+        border: solid $error;
+        margin-bottom: 1;
+    }
+    
+    #error-log {
+        height: auto;
+        max-height: 8;
+    }
+    
+    #cancel-btn {
+        width: 100%;
+        margin-top: 1;
+    }
+    
+    .action-buttons {
+        height: auto;
+    }
+    """
     
     def compose(self) -> ComposeResult:
         yield Header()
@@ -357,7 +528,9 @@ class ModlistGeneratorApp(App):
                 )
                 
                 # Action buttons
-                yield Button("🔍 Scan Mods", id="scan-btn", variant="success")
+                with Horizontal(classes="action-buttons"):
+                    yield Button("🔍 Scan Mods", id="scan-btn", variant="success")
+                    yield Button("⏹ Cancel", id="cancel-btn", variant="error", disabled=True)
                 yield Button("💾 Export Results", id="export-btn", variant="primary", disabled=True)
                 
                 # Progress
@@ -369,6 +542,10 @@ class ModlistGeneratorApp(App):
             with Vertical(id="results-panel"):
                 yield Static("📋 Results", classes="section-title")
                 
+                # Search bar
+                with Horizontal(id="search-container"):
+                    yield Input(placeholder="🔍 Search mods...", id="search-input")
+                
                 # Summary
                 with Vertical(id="summary-panel"):
                     yield Static("No scan results yet. Click 'Scan Mods' to begin.", id="summary-text")
@@ -376,6 +553,10 @@ class ModlistGeneratorApp(App):
                 # Collapsible mod detail panel
                 with Collapsible(title="📄 Mod Details (select a row)", collapsed=True, id="mod-detail"):
                     yield Static("Select a mod from the table to view its details and dependencies.", id="mod-detail-content")
+                
+                # Collapsible errors panel
+                with Collapsible(title="⚠️ Errors (0)", collapsed=True, id="errors-panel"):
+                    yield RichLog(id="error-log", highlight=True, markup=True)
                 
                 # Results table
                 yield DataTable(id="results-table")
@@ -409,6 +590,8 @@ class ModlistGeneratorApp(App):
                 self.query_one("#folder-input", Input).value = str(path)
                 log = self.query_one("#log-panel", RichLog)
                 log.write(f"Selected folder: [cyan]{path}[/]")
+                # Save last folder
+                self.settings_mgr.save_settings({"last_folder": str(path)})
         
         self.push_screen(FolderSelectScreen(self.input_folder), handle_folder)
     
@@ -417,8 +600,126 @@ class ModlistGeneratorApp(App):
         """Update input folder when text changes."""
         try:
             self.input_folder = Path(event.value)
+            # Save last folder
+            if self.input_folder.exists():
+                self.settings_mgr.save_settings({"last_folder": str(self.input_folder)})
         except Exception:
             pass
+    
+    @on(Input.Changed, "#search-input")
+    def on_search_changed(self, event: Input.Changed) -> None:
+        """Filter the results table based on search text."""
+        if not self._full_mod_list:
+            return
+        
+        search_text = event.value.lower().strip()
+        table = self.query_one("#results-table", DataTable)
+        
+        # Clear and repopulate table
+        table.clear()
+        
+        for mod in self._full_mod_list:
+            # Check if search text matches any field
+            if search_text:
+                searchable = f"{mod.name} {mod.loader} {mod.author or ''} {mod.version}".lower()
+                if search_text not in searchable:
+                    continue
+            
+            # Add row (same format as original population)
+            status = "✅" if mod.is_enabled else "❌"
+            deps_count = str(len(mod.dependencies)) if mod.dependencies else "0"
+            mc_vers = ", ".join(mod.mc_versions[:2]) if mod.mc_versions else "-"
+            if mod.mc_versions and len(mod.mc_versions) > 2:
+                mc_vers += "..."
+            
+            table.add_row(
+                mod.name,
+                mod.loader.capitalize(),
+                mod.version,
+                mod.author or "-",
+                deps_count,
+                mc_vers,
+                status
+            )
+    
+    @on(DataTable.HeaderSelected)
+    def on_header_selected(self, event: DataTable.HeaderSelected) -> None:
+        """Sort table when a column header is clicked."""
+        if not self._full_mod_list:
+            return
+        
+        column_key = event.column_key
+        column_index = event.column_index
+        
+        # Toggle sort direction if same column
+        if self._current_sort_column == column_index:
+            self._sort_reverse = not self._sort_reverse
+        else:
+            self._current_sort_column = column_index
+            self._sort_reverse = False
+        
+        # Define sort key functions for each column
+        sort_keys = {
+            0: lambda m: m.name.lower(),  # Name
+            1: lambda m: m.loader.lower(),  # Loader
+            2: lambda m: m.version,  # Version
+            3: lambda m: (m.author or "").lower(),  # Author
+            4: lambda m: len(m.dependencies) if m.dependencies else 0,  # Deps
+            5: lambda m: m.mc_versions[0] if m.mc_versions else "",  # MC Version
+            6: lambda m: m.is_enabled,  # Status
+        }
+        
+        if column_index in sort_keys:
+            self._full_mod_list.sort(key=sort_keys[column_index], reverse=self._sort_reverse)
+            
+            # Clear search and refresh table
+            search_input = self.query_one("#search-input", Input)
+            search_input.value = ""
+            self._refresh_table()
+            
+            # Log sort action
+            log = self.query_one("#log-panel", RichLog)
+            direction = "↓" if self._sort_reverse else "↑"
+            log.write(f"[dim]Sorted by column {column_index + 1} {direction}[/]")
+    
+    def _refresh_table(self) -> None:
+        """Refresh the table with current mod list."""
+        table = self.query_one("#results-table", DataTable)
+        table.clear()
+        
+        for mod in self._full_mod_list:
+            status = "✅" if mod.is_enabled else "❌"
+            deps_count = str(len(mod.dependencies)) if mod.dependencies else "0"
+            mc_vers = ", ".join(mod.mc_versions[:2]) if mod.mc_versions else "-"
+            if mod.mc_versions and len(mod.mc_versions) > 2:
+                mc_vers += "..."
+            
+            table.add_row(
+                mod.name,
+                mod.loader.capitalize(),
+                mod.version,
+                mod.author or "-",
+                deps_count,
+                mc_vers,
+                status
+            )
+    
+    @on(Button.Pressed, "#cancel-btn")
+    def on_cancel_pressed(self) -> None:
+        """Cancel the running scan."""
+        self._cancel_event.set()
+        log = self.query_one("#log-panel", RichLog)
+        log.write("[yellow]⏹ Cancellation requested...[/]")
+        self.query_one("#status-label", Static).update("Cancelling...")
+    
+    def action_cancel_scan(self) -> None:
+        """Cancel scan action (bound to Escape key)."""
+        if not self.query_one("#cancel-btn", Button).disabled:
+            self.on_cancel_pressed()
+    
+    def action_focus_search(self) -> None:
+        """Focus the search input (bound to / key)."""
+        self.query_one("#search-input", Input).focus()
     
     @on(DataTable.RowSelected)
     def on_row_selected(self, event: DataTable.RowSelected) -> None:
@@ -483,6 +784,10 @@ class ModlistGeneratorApp(App):
     def run_scan(self) -> None:
         """Run the scan in a background thread."""
         self.is_scanning = True
+        self._cancel_event.clear()  # Reset cancel event
+        
+        # Enable cancel button, disable scan button
+        self.call_from_thread(self._set_scanning_ui, True)
         
         # Get settings
         recursive = self.query_one("#recursive-check", Checkbox).value
@@ -495,9 +800,25 @@ class ModlistGeneratorApp(App):
         self.call_from_thread(log.write, f"Starting scan of [cyan]{self.input_folder}[/]...")
         
         try:
-            scanner = ModScanner(workers=workers, progress_batch_size=10, progress_batch_interval=0.1)
+            # Create scanner with cache support
+            cache = None
+            if self.config.enable_cache:
+                cache = ScanCache(self.config.get_cache_dir())
+                self.call_from_thread(log.write, "[dim]Cache: enabled[/dim]")
+            
+            scanner = ModScanner(
+                workers=workers,
+                progress_batch_size=10,
+                progress_batch_interval=0.1,
+                cache=cache,
+                use_cache=(cache is not None)
+            )
             
             def progress_callback(update: ProgressUpdate) -> None:
+                # Check for cancellation
+                if self._cancel_event.is_set():
+                    raise InterruptedError("Scan cancelled by user")
+                    
                 self.call_from_thread(
                     self._update_status, 
                     f"Processing: {update.filename[:30]}...", 
@@ -510,6 +831,10 @@ class ModlistGeneratorApp(App):
                 include_disabled=include_disabled,
                 progress_callback=progress_callback
             )
+            
+            # Check cancellation after scan
+            if self._cancel_event.is_set():
+                raise InterruptedError("Scan cancelled by user")
             
             # Apply filters
             if self.query_one("#exclude-unknown-check", Checkbox).value:
@@ -526,8 +851,15 @@ class ModlistGeneratorApp(App):
                 result.mods = unique_mods
             
             self.scan_result = result
+            # Store full mod list for search/sort
+            self._full_mod_list = list(result.mods)
+            
             self.call_from_thread(self._display_results)
             self.call_from_thread(log.write, f"[bold green]Scan complete![/] Found {len(result.mods)} mods in {result.scan_duration:.2f}s")
+            
+        except InterruptedError as e:
+            self.call_from_thread(log.write, f"[yellow]⏹ {str(e)}[/]")
+            self.call_from_thread(self._update_status, "Cancelled", 0)
             
         except Exception as e:
             self.call_from_thread(log.write, f"[bold red]Error:[/] {str(e)}")
@@ -535,7 +867,15 @@ class ModlistGeneratorApp(App):
         
         finally:
             self.is_scanning = False
-            self.call_from_thread(self._update_status, "Ready", 1.0)
+            self._cancel_event.clear()
+            self.call_from_thread(self._set_scanning_ui, False)
+            if self.scan_result:
+                self.call_from_thread(self._update_status, "Ready", 1.0)
+    
+    def _set_scanning_ui(self, scanning: bool) -> None:
+        """Update UI elements based on scanning state."""
+        self.query_one("#scan-btn", Button).disabled = scanning
+        self.query_one("#cancel-btn", Button).disabled = not scanning
     
     def _update_status(self, message: str, progress: float) -> None:
         """Update status label and progress bar."""
@@ -594,6 +934,24 @@ class ModlistGeneratorApp(App):
                 status
             )
         
+        # Update errors panel
+        errors_panel = self.query_one("#errors-panel", Collapsible)
+        error_log = self.query_one("#error-log", RichLog)
+        error_log.clear()
+        
+        if result.errors:
+            errors_panel.title = f"⚠️ Errors ({len(result.errors)})"
+            for error in result.errors:
+                error_log.write(f"[red]• {error}[/]")
+            errors_panel.collapsed = False
+        else:
+            errors_panel.title = "⚠️ Errors (0)"
+            error_log.write("[dim]No errors during scan[/]")
+            errors_panel.collapsed = True
+        
+        # Clear search input
+        self.query_one("#search-input", Input).value = ""
+        
         # Enable export button
         self.query_one("#export-btn", Button).disabled = False
     
@@ -616,6 +974,24 @@ class ModlistGeneratorApp(App):
         
         output_path = self.input_folder / f"modlist{formatter.extension}"
         
+        # Check if file exists and show confirmation dialog
+        if output_path.exists():
+            def handle_confirm(confirmed: bool) -> None:
+                if confirmed:
+                    self._do_export(output_path, formatter, compact)
+            
+            self.push_screen(
+                ConfirmScreen(
+                    title="Overwrite File?",
+                    message=f"'{output_path.name}' already exists.\nDo you want to overwrite it?"
+                ),
+                handle_confirm
+            )
+        else:
+            self._do_export(output_path, formatter, compact)
+    
+    def _do_export(self, output_path: Path, formatter, compact: bool) -> None:
+        """Perform the actual export operation."""
         try:
             formatter.save(self.scan_result, output_path, include_errors=True, compact=compact)
             
@@ -631,6 +1007,8 @@ class ModlistGeneratorApp(App):
     def action_toggle_dark(self) -> None:
         """Toggle dark mode."""
         self.dark = not self.dark
+        # Save preference
+        self.settings_mgr.save_settings({"dark_mode": self.dark})
 
 
 def main():

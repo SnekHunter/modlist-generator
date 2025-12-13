@@ -1,0 +1,11 @@
+{
+  "mods": [],
+  "total_mods": 0,
+  "total_files_scanned": 0,
+  "scan_duration_seconds": 0.0,
+  "generated_at": "2025-12-14T02:44:11.091903",
+  "errors": [
+    "Path validation failed: Path does not exist: D:\\Coding Projects\\modlist-generator\\mods"
+  ],
+  "error_count": 1
+}

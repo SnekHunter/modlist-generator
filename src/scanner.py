@@ -253,6 +253,7 @@ class ModScanner:
             raise ValueError(f"Path is not a directory: {folder_path}")
 
         # Find JAR files (both active and disabled)
+        disabled_files: List[Path] = []  # Initialize to avoid NameError
         if recursive:
             jar_files = list(folder_path.rglob("*.jar"))
             if include_disabled:
@@ -263,7 +264,7 @@ class ModScanner:
                 disabled_files = list(folder_path.glob("*.jar.disabled"))
 
         # Track which files are disabled
-        disabled_set = set(disabled_files) if include_disabled else set()
+        disabled_set = set(disabled_files)
         all_files = jar_files + (disabled_files if include_disabled else [])
 
         # Apply exclusions

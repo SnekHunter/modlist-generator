@@ -25,6 +25,8 @@ from src import __version__
 from src.scanner import ModScanner, ProgressUpdate
 from src.models import ScanResult
 from src.formatters import FORMATTERS, get_formatter
+from src.config import load_config
+from src.cache import ScanCache
 
 # Set up console
 console = Console() if RICH_AVAILABLE else None
@@ -282,7 +284,49 @@ Examples:
         version=f'Modlist Generator {__version__}'
     )
     
+    # Cache management arguments
+    cache_group = parser.add_argument_group('cache management')
+    cache_group.add_argument(
+        '--cache-clear',
+        action='store_true',
+        help='Clear scan cache and exit'
+    )
+    cache_group.add_argument(
+        '--cache-stats',
+        action='store_true',
+        help='Show cache statistics and exit'
+    )
+    cache_group.add_argument(
+        '--no-cache',
+        action='store_true',
+        help='Disable caching for this scan'
+    )
+    
     args = parser.parse_args()
+    
+    # Load configuration
+    config = load_config()
+    
+    # Handle cache management commands
+    if args.cache_clear or args.cache_stats:
+        import json
+        cache = ScanCache(config.get_cache_dir())
+        
+        if args.cache_clear:
+            cache.clear()
+            if RICH_AVAILABLE and console:
+                console.print("[green]✓ Cache cleared[/green]")
+            else:
+                print("✓ Cache cleared")
+            return 0
+        
+        if args.cache_stats:
+            stats = cache.get_stats()
+            if RICH_AVAILABLE and console:
+                console.print(json.dumps(stats, indent=2))
+            else:
+                print(json.dumps(stats, indent=2))
+            return 0
     
     # Setup logging
     log_level = 'ERROR' if args.quiet else args.log_level
@@ -315,8 +359,17 @@ Examples:
                 print(f"Output: {output_path} ({formatter.name})")
                 print()
         
-        # Create scanner and run
-        scanner = ModScanner(workers=args.workers)
+        # Create scanner with cache support
+        cache = None
+        if config.enable_cache and not args.no_cache:
+            cache = ScanCache(config.get_cache_dir())
+            if not args.quiet:
+                if RICH_AVAILABLE and console:
+                    console.print(f"[dim]Cache: enabled[/dim]")
+                else:
+                    print("Cache: enabled")
+        
+        scanner = ModScanner(workers=args.workers, cache=cache, use_cache=(cache is not None))
         result = scan_with_progress(scanner, input_path, args.recursive, args.exclude, args.include_disabled)
         
         # Apply filters
