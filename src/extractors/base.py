@@ -17,56 +17,58 @@ logger = logging.getLogger(__name__)
 # Regex patterns for parsing Minecraft version constraints
 MC_VERSION_PATTERNS = [
     # Exact version: 1.20.1
-    re.compile(r'^(\d+\.\d+(?:\.\d+)?)$'),
+    re.compile(r"^(\d+\.\d+(?:\.\d+)?)$"),
     # Semver range: >=1.20 <1.21, >=1.20.1
-    re.compile(r'[><=~^]*\s*(\d+\.\d+(?:\.\d+)?)'),
+    re.compile(r"[><=~^]*\s*(\d+\.\d+(?:\.\d+)?)"),
     # Maven range: [1.20,1.21), [1.20.1,)
-    re.compile(r'[\[\(](\d+\.\d+(?:\.\d+)?)\s*,'),
-    re.compile(r',\s*(\d+\.\d+(?:\.\d+)?)[\]\)]'),
+    re.compile(r"[\[\(](\d+\.\d+(?:\.\d+)?)\s*,"),
+    re.compile(r",\s*(\d+\.\d+(?:\.\d+)?)[\]\)]"),
     # Wildcard: 1.20.x, 1.20.*
-    re.compile(r'(\d+\.\d+)(?:\.[x*])?'),
+    re.compile(r"(\d+\.\d+)(?:\.[x*])?"),
 ]
 
 
 class BaseExtractor(ABC):
     """Abstract base class for mod metadata extractors."""
-    
+
     @property
     @abstractmethod
     def name(self) -> str:
         """Human-readable name of the extractor."""
         pass
-    
+
     @property
     @abstractmethod
     def priority(self) -> int:
         """Priority for extraction order (lower = higher priority)."""
         pass
-    
+
     @abstractmethod
     def can_extract(self, jar: zipfile.ZipFile, files: List[str]) -> bool:
         """Check if this extractor can handle the given JAR file."""
         pass
-    
+
     @abstractmethod
-    def extract(self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]) -> Tuple[Optional[ModInfo], Optional[str]]:
+    def extract(
+        self, jar: zipfile.ZipFile, jar_path: Path, files: List[str]
+    ) -> Tuple[Optional[ModInfo], Optional[str]]:
         """Extract mod information from the JAR file.
-        
+
         Returns:
             Tuple of (ModInfo or None, error message or None)
         """
         pass
-    
-    def _safe_decode(self, content: bytes, encoding: str = 'utf-8') -> str:
+
+    def _safe_decode(self, content: bytes, encoding: str = "utf-8") -> str:
         """Safely decode bytes to string."""
         try:
             return content.decode(encoding)
         except UnicodeDecodeError:
-            return content.decode('latin-1')
-    
+            return content.decode("latin-1")
+
     def _extract_dependencies(self, data: dict, dep_fields: List[str]) -> List[str]:
         """Extract dependency list from metadata."""
-        dependencies = []
+        dependencies: List[str] = []
         for field in dep_fields:
             if field in data:
                 deps = data[field]
@@ -77,15 +79,19 @@ class BaseExtractor(ABC):
                         if isinstance(dep, str):
                             dependencies.append(dep)
                         elif isinstance(dep, dict):
-                            dep_id = dep.get('modId') or dep.get('id') or dep.get('mod_id')
+                            dep_id = (
+                                dep.get("modId") or dep.get("id") or dep.get("mod_id")
+                            )
                             if dep_id:
                                 dependencies.append(dep_id)
         return dependencies
-    
-    def _normalize_authors(self, authors: Union[str, List[Union[str, Dict[str, Any]]], None]) -> Optional[str]:
+
+    def _normalize_authors(
+        self, authors: Union[str, List[Union[str, Dict[str, Any]]], None]
+    ) -> Optional[str]:
         """
         Normalize authors to a comma-separated string.
-        
+
         Handles:
         - String: "Author Name"
         - List of strings: ["Author1", "Author2"]
@@ -93,10 +99,10 @@ class BaseExtractor(ABC):
         """
         if not authors:
             return None
-        
+
         if isinstance(authors, str):
             return authors.strip() if authors.strip() else None
-        
+
         if isinstance(authors, list):
             names = []
             for author in authors:
@@ -105,17 +111,21 @@ class BaseExtractor(ABC):
                         names.append(author.strip())
                 elif isinstance(author, dict):
                     # Extract name from object format
-                    name = author.get('name') or author.get('username') or author.get('id')
+                    name = (
+                        author.get("name") or author.get("username") or author.get("id")
+                    )
                     if name and isinstance(name, str) and name.strip():
                         names.append(name.strip())
-            return ', '.join(names) if names else None
-        
+            return ", ".join(names) if names else None
+
         return None
-    
-    def _parse_mc_versions(self, version_constraint: Union[str, List[str], None]) -> List[str]:
+
+    def _parse_mc_versions(
+        self, version_constraint: Union[str, List[str], None]
+    ) -> List[str]:
         """
         Parse Minecraft version constraint into list of versions.
-        
+
         Handles common formats:
         - Exact: "1.20.1"
         - Semver: ">=1.20 <1.21", "~1.20.1", "^1.20"
@@ -124,28 +134,29 @@ class BaseExtractor(ABC):
         """
         if not version_constraint:
             return []
-        
+
         if isinstance(version_constraint, list):
             # Recursively parse list items
-            versions = []
+            versions_list: List[str] = []
             for item in version_constraint:
-                versions.extend(self._parse_mc_versions(item))
-            return list(set(versions))
-        
+                versions_list.extend(self._parse_mc_versions(item))
+            return list(set(versions_list))
+
         if not isinstance(version_constraint, str):
             return []
-        
-        versions = set()
+
+        versions: List[str] = []
         constraint = version_constraint.strip()
-        
+
         # Extract all version numbers from the constraint
         for pattern in MC_VERSION_PATTERNS:
             for match in pattern.finditer(constraint):
                 version = match.group(1)
                 if version:
                     # Normalize: ensure at least major.minor format
-                    parts = version.split('.')
+                    parts = version.split(".")
                     if len(parts) >= 2:
-                        versions.add(version)
-        
+                        if version not in versions:
+                            versions.append(version)
+
         return sorted(versions)

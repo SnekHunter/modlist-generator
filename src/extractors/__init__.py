@@ -16,10 +16,10 @@ ALL_EXTRACTORS = [
 ]
 
 __all__ = [
-    'BaseExtractor',
-    'FabricExtractor',
-    'QuiltExtractor',
-    'ForgeTomlExtractor',
-    'LegacyForgeExtractor',
-    'ALL_EXTRACTORS',
+    "BaseExtractor",
+    "FabricExtractor",
+    "QuiltExtractor",
+    "ForgeTomlExtractor",
+    "LegacyForgeExtractor",
+    "ALL_EXTRACTORS",
 ]
