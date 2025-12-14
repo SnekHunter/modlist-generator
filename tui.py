@@ -304,6 +304,11 @@ class SettingsManager:
     def set(self, key: str, value: Any) -> None:
         self.settings[key] = value
         self.save()
+    
+    def save_settings(self, updates: dict) -> None:
+        """Update multiple settings at once."""
+        self.settings.update(updates)
+        self.save()
 
 
 class ModlistGeneratorApp(App):

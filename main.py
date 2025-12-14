@@ -27,6 +27,7 @@ from src.models import ScanResult
 from src.formatters import FORMATTERS, get_formatter
 from src.config import load_config
 from src.cache import ScanCache
+from src.diff import compare_scan_results, load_scan_result_from_json, DiffResult
 
 # Set up console
 console = Console() if RICH_AVAILABLE else None
@@ -157,6 +158,73 @@ def scan_with_progress(scanner: ModScanner, folder_path: Path, recursive: bool, 
             include_disabled=include_disabled,
             progress_callback=simple_progress
         )
+
+
+def _output_diff(diff_result: DiffResult, format: str, output_path: Optional[Path], quiet: bool) -> None:
+    """Output diff result in the specified format."""
+    import json as json_module
+    
+    if format == "json":
+        content = json_module.dumps(diff_result.to_dict(), indent=2)
+    elif format == "markdown":
+        content = diff_result.to_markdown()
+    else:  # text format
+        content = _format_diff_text(diff_result)
+    
+    if output_path:
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(content)
+        if not quiet:
+            if RICH_AVAILABLE and console:
+                console.print(f"[green]✓ Diff report saved to {output_path}[/green]")
+            else:
+                print(f"✓ Diff report saved to {output_path}")
+    else:
+        # Print to console
+        if not quiet:
+            print()
+            print(content)
+
+
+def _format_diff_text(diff: DiffResult) -> str:
+    """Format diff result as colored text."""
+    lines = [
+        "=" * 60,
+        "  MODLIST DIFF REPORT",
+        "=" * 60,
+        "",
+        f"  Added:     {len(diff.added):>4}  mods",
+        f"  Removed:   {len(diff.removed):>4}  mods",
+        f"  Updated:   {len(diff.updated):>4}  mods",
+        f"  Unchanged: {len(diff.unchanged):>4}  mods",
+        "",
+        f"  Previous: {diff.old_total_mods} mods → Current: {diff.new_total_mods} mods",
+        "=" * 60,
+    ]
+    
+    if diff.added:
+        lines.extend(["", "➕ ADDED MODS:", "-" * 40])
+        for mod in sorted(diff.added, key=lambda m: m.name.lower()):
+            lines.append(f"  + {mod.name} v{mod.new_version or '?'} ({mod.new_loader or '?'})")
+    
+    if diff.removed:
+        lines.extend(["", "➖ REMOVED MODS:", "-" * 40])
+        for mod in sorted(diff.removed, key=lambda m: m.name.lower()):
+            lines.append(f"  - {mod.name} v{mod.old_version or '?'} ({mod.old_loader or '?'})")
+    
+    if diff.updated:
+        lines.extend(["", "🔄 UPDATED MODS:", "-" * 40])
+        for mod in sorted(diff.updated, key=lambda m: m.name.lower()):
+            changes = ", ".join(mod.details) if mod.details else ""
+            lines.append(f"  ~ {mod.name}: {mod.old_version} → {mod.new_version}")
+            if changes:
+                lines.append(f"      ({changes})")
+    
+    if not diff.has_changes:
+        lines.extend(["", "✓ No changes detected - modlists are identical"])
+    
+    lines.append("")
+    return "\n".join(lines)
 
 
 def main():
@@ -302,7 +370,62 @@ Examples:
         help='Disable caching for this scan'
     )
     
+    # UI mode arguments
+    ui_group = parser.add_argument_group('user interface')
+    ui_group.add_argument(
+        '--gui',
+        action='store_true',
+        help='Launch graphical user interface (CustomTkinter)'
+    )
+    ui_group.add_argument(
+        '--tui',
+        action='store_true',
+        help='Launch terminal user interface (Textual)'
+    )
+    
+    # Diff mode arguments
+    diff_group = parser.add_argument_group('diff mode')
+    diff_group.add_argument(
+        '--diff',
+        type=Path,
+        metavar='PREVIOUS',
+        help='Compare with previous scan result (JSON file)'
+    )
+    diff_group.add_argument(
+        '--diff-output',
+        type=Path,
+        metavar='FILE',
+        help='Output diff report to file (default: print to console)'
+    )
+    diff_group.add_argument(
+        '--diff-format',
+        choices=['json', 'markdown', 'text'],
+        default='text',
+        help='Diff output format (default: text)'
+    )
+    
     args = parser.parse_args()
+    
+    # Handle UI mode launches
+    if args.gui:
+        try:
+            from gui import main as gui_main
+            gui_main()
+            return 0
+        except ImportError as e:
+            print(f"Error: GUI not available. Install customtkinter: pip install customtkinter")
+            print(f"Details: {e}")
+            return 1
+    
+    if args.tui:
+        try:
+            from tui import main as tui_main
+            tui_main()
+            return 0
+        except ImportError as e:
+            print(f"Error: TUI not available. Install textual: pip install textual")
+            print(f"Details: {e}")
+            return 1
     
     # Load configuration
     config = load_config()
@@ -395,6 +518,29 @@ Examples:
         
         # Save output
         formatter.save(result, output_path, include_errors=not args.no_errors, compact=getattr(args, 'compact', False))
+        
+        # Handle diff mode
+        if args.diff:
+            if not args.diff.exists():
+                if RICH_AVAILABLE and console:
+                    console.print(f"[red]Error: Previous scan file not found: {args.diff}[/red]")
+                else:
+                    print(f"Error: Previous scan file not found: {args.diff}")
+                sys.exit(1)
+            
+            try:
+                old_result = load_scan_result_from_json(args.diff)
+                diff_result = compare_scan_results(old_result, result)
+                
+                # Output diff
+                _output_diff(diff_result, args.diff_format, args.diff_output, args.quiet)
+                
+            except Exception as e:
+                if RICH_AVAILABLE and console:
+                    console.print(f"[red]Error comparing scan results: {e}[/red]")
+                else:
+                    print(f"Error comparing scan results: {e}")
+                sys.exit(1)
         
         # Print summary
         if not args.quiet:

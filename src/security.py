@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 # Security limits
 MAX_FILE_SIZE = 500 * 1024 * 1024  # 500MB per file
 MAX_DECOMPRESSED_SIZE = 500 * 1024 * 1024  # 500MB total decompressed
-MAX_FILES_IN_JAR = 10000  # Maximum files in a JAR
+MAX_FILES_IN_JAR = 100000  # Maximum files in a JAR (increased for large mods)
 MAX_PATH_LENGTH = 1000  # Maximum path length
 
 # Forbidden system directories

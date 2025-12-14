@@ -16,5 +16,8 @@ pyyaml>=6.0
 # TUI Application
 textual>=0.50.0  # Terminal User Interface framework
 
+# GUI Application
+customtkinter>=5.2.0  # Modern Tkinter GUI framework
+
 # Building executables (development only)
-# pyinstaller>=6.0.0
+pyinstaller>=6.0.0
